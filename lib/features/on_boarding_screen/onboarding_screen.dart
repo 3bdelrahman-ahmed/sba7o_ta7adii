@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
+import 'package:lottie/lottie.dart';
 
 import '../../core/router/routes.dart';
 import '../../core/theming/colors.dart';
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<OnBoardingScreen> {
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     super.initState();
-    Future.delayed(Duration(seconds: 3)
+    Future.delayed(Duration(seconds: 8)
       ,() {
         Navigator.pushReplacementNamed(context, Routes.homeScreen);
       },);
@@ -50,7 +51,11 @@ class _SplashScreenState extends State<OnBoardingScreen> {
                 width: 300,
                 height: 300,
               )),
-      LoadingAnimationWidget.threeArchedCircle(color: ColorsManager.red, size: 50)
+
+              Lottie.asset('assets/football.json',
+              width: 200,
+              height: 150,
+              )
         ],
       ),
     );

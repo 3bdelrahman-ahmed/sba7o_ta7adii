@@ -37,6 +37,13 @@ dependencies:
   http:   
   loading_animation_widget: ^1.2.0+4
   shimmer_animation: 
+  o3d: ^3.1.0
+  flutter_cube: ^0.1.1
+  lottie: ^2.7.0
+  flutter_screenutil: ^5.9.0
+  neon_widgets: ^2.0.0
+
+
   
 
   # The following adds the Cupertino Icons font to your application.
@@ -59,7 +66,10 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
+  fonts:
+    - family: fonts
+      fonts:
+        - asset: assets/fonts/Cairo-VariableFont_slnt,wght.ttf
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
