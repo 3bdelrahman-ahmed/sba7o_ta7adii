@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:neon_widgets/neon_widgets.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
+import 'package:spa7o_ta7adii/core/theming/styles.dart';
 
 class GameCard extends StatefulWidget {
   final String gameTitle;
@@ -52,21 +53,27 @@ class _GameCardState extends State<GameCard> with SingleTickerProviderStateMixin
                     image: AssetImage(widget.gameName),
                     fit: BoxFit.fill,
                   ),
-                  color: Colors.amber,
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
+                  color: Colors.transparent,
+                  borderRadius:const BorderRadius.all(Radius.circular(20)),
                 ),
               ),
             ),
           ),
           Center(
-            child:  NeonText(
-              text: widget.gameTitle,
-       spreadColor: ColorsManager.Primary,
-       blurRadius: 200,
-       textSize: 24,
-       textColor: Colors.black,
-       fontFamily: 'fonts',
-       fontWeight: FontWeight.bold,
+            child:Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: ColorsManager.Primary.withOpacity(0.3),
+                  borderRadius: BorderRadius.circular(25)
+                ),
+                width: MediaQuery.of(context).size.width,
+                child: Text(
+                    widget.gameTitle,
+                  textAlign: TextAlign.center,
+                  style: Styles.homeStyle,
+                ),
+              ),
             ),
           ),
         ],

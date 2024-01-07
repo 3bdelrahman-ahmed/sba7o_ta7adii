@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:lottie/lottie.dart';
-
 import '../../core/router/routes.dart';
 import '../../core/theming/colors.dart';
 
@@ -19,7 +18,7 @@ class _SplashScreenState extends State<OnBoardingScreen> {
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     super.initState();
-    Future.delayed(Duration(seconds: 8)
+    Future.delayed(Duration(seconds: 1)
       ,() {
         Navigator.pushReplacementNamed(context, Routes.homeScreen);
       },);

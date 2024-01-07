@@ -51,7 +51,7 @@ Center(
    
    GridView.builder
    (
-    itemCount: InstructionsList().gameNames.length,
+    itemCount: InstructionsList.gameNames.length,
     gridDelegate: 
    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
     itemBuilder: (context,  index){
@@ -61,7 +61,7 @@ Center(
         MaterialPageRoute(builder: (context)=>InstructionsScreen(index: index))
         );
         },
-        child: GameCard(gameTitle: InstructionsList().gameNames[index], instructionText: InstructionsList().instr[index],gameName: InstructionsList().photos[index],)
+        child: GameCard(gameTitle: InstructionsList.gameNames[index], instructionText: InstructionsList.instr[index],gameName: InstructionsList.photos[index],)
         );
     }
     )
