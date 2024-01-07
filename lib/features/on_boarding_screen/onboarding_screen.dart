@@ -18,7 +18,7 @@ class _SplashScreenState extends State<OnBoardingScreen> {
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     super.initState();
-    Future.delayed(Duration(seconds: 1)
+    Future.delayed(Duration(seconds: 4)
       ,() {
         Navigator.pushReplacementNamed(context, Routes.homeScreen);
       },);
