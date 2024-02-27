@@ -11,7 +11,7 @@ import 'package:spa7o_ta7adii/features/Games/passwordchallenge_screen/presentati
 import 'package:spa7o_ta7adii/features/Games/risk_screen/presentation/pages/risk_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/seba2_screen/presentation/pages/seba2_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/tamsel_screen/presentation/pages/tamseel_screen.dart';
-import 'package:spa7o_ta7adii/features/on_boarding_screen/onboarding_screen.dart';
+import 'package:spa7o_ta7adii/features/on_boarding_screen/presentaion/onboarding_screen.dart';
 import 'package:spa7o_ta7adii/features/home_screen/presentaion/home_screen.dart';
 
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 
-import '../../../../home_screen/data/instructions_list.dart';
 
 class Seba2Screen extends StatelessWidget {
   const Seba2Screen({super.key});
@@ -9,7 +9,7 @@ class Seba2Screen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: Center(child: Text(" انا سكرين ${InstructionsList.gameNames[6]} ")),
+      child: Center(child: Text(" انا سكرين ${GamesNames.gameNames[6]} ")),
     );
   }
 }

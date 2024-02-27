@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:lottie/lottie.dart';
-import '../../core/router/routes.dart';
-import '../../core/theming/colors.dart';
+import '../../../core/router/routes.dart';
+import '../../../core/theming/colors.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   static String route = "Splash";
@@ -18,7 +17,7 @@ class _SplashScreenState extends State<OnBoardingScreen> {
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
     super.initState();
-    Future.delayed(Duration(seconds: 4)
+    Future.delayed(const Duration(seconds: 6)
       ,() {
         Navigator.pushReplacementNamed(context, Routes.homeScreen);
       },);

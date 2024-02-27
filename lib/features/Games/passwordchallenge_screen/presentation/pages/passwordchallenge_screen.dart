@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 
-import '../../../../home_screen/data/instructions_list.dart';
 
 class PasswordScreen extends StatelessWidget {
   const PasswordScreen({super.key});
@@ -9,6 +9,6 @@ class PasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: Center(child: Text(" انا سكرين ${InstructionsList.gameNames[5]} ")),    );
+      child: Center(child: Text(" انا سكرين ${GamesNames.gameNames[5]} ")),    );
   }
 }
