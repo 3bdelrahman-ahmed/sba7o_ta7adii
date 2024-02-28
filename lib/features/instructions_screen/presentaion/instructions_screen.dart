@@ -4,13 +4,12 @@ import 'dart:ui';
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
 import 'package:spa7o_ta7adii/core/theming/styles.dart';
-import 'package:spa7o_ta7adii/features/Games/bank_screen/presentation/pages/bank_screen.dart';
-import 'package:spa7o_ta7adii/features/home_screen/data/instructions_list.dart';
+import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
+import 'package:spa7o_ta7adii/core/widgets/static/games_instr.dart';
+import 'package:spa7o_ta7adii/core/widgets/static/screens_list.dart';
 
-import '../../../core/router/routes.dart';
 
 class InstructionsScreen extends StatefulWidget {
   final int index;
@@ -69,7 +68,7 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
               child: Column(
                 children: [
                   Center(
-                    child: Text(InstructionsList.gameNames[widget.index],style: Styles.homeStyle.copyWith(
+                    child: Text(GamesNames.gameNames[widget.index],style: Styles.homeStyle.copyWith(
                       fontSize: 26
                     ),),
                   ),
@@ -95,7 +94,7 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
                       duration: Duration(seconds: 1),
                       child: GestureDetector(
                         onTap: () {
-                         Navigator.push(context, MaterialPageRoute(builder: (context) => InstructionsList.screens[widget.index]));
+                         Navigator.push(context, MaterialPageRoute(builder: (context) => ScreensList.screens[widget.index]));
                         },
                         child: Container(
                           decoration: BoxDecoration(

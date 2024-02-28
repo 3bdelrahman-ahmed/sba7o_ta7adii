@@ -1,21 +1,23 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:neon_widgets/neon_widgets.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
 import 'package:spa7o_ta7adii/core/theming/styles.dart';
 
 class GameCard extends StatefulWidget {
   final String gameTitle;
   final String instructionText;
-  final String gameName;
+  final String gamePho;
+  final double width;
+  final double height;
 
   GameCard({
     Key? key,
     required this.gameTitle,
-    required this.instructionText,
-    required this.gameName,
+    this.instructionText = " ",
+    required this.gamePho, 
+    required this.width, 
+    required this.height,
   }) : super(key: key);
 
   @override
@@ -27,8 +29,8 @@ class _GameCardState extends State<GameCard> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Container(
       margin: const EdgeInsets.all(25),
-      height: 100.h,
-      width: 75.w,
+      height: widget.height.h,
+      width: widget.width.w,
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(20)),
       ),
@@ -50,7 +52,7 @@ class _GameCardState extends State<GameCard> with SingleTickerProviderStateMixin
                     )
                   ],
                   image: DecorationImage(
-                    image: AssetImage(widget.gameName),
+                    image: AssetImage(widget.gamePho),
                     fit: BoxFit.fill,
                   ),
                   color: Colors.transparent,

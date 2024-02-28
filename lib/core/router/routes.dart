@@ -12,5 +12,4 @@ class Routes{
   static String RiskScreen = "/RiskScreen";
   static String Seba2Screen = "/Seba2Screen";
   static String MeenXelsoraScreen = "/MeenXelsoraScreen";
-
 }
