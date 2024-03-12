@@ -4,8 +4,6 @@ import 'package:spa7o_ta7adii/core/theming/colors.dart';
 import 'package:spa7o_ta7adii/core/theming/styles.dart';
 
 class InputField extends StatelessWidget {
-
-
   final TextEditingController? controller;
   final bool maxLines;
   final TextInputType? textInputType;
@@ -22,9 +20,7 @@ class InputField extends StatelessWidget {
 
   const InputField({
     Key? key,
-    
     this.controller,
-
     this.maxLines=false,
     this.textInputType,
     this.prefixIcon,
@@ -46,8 +42,8 @@ class InputField extends StatelessWidget {
       children: [
         const SizedBox(height: 3,),
         TextFormField(
-          
-                      decoration: InputDecoration(
+
+          decoration: InputDecoration(
                         isDense: true,
                         contentPadding: contentPadding?? const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
                         hintText: hintText,
@@ -65,7 +61,7 @@ class InputField extends StatelessWidget {
                           ),
                         ),
                          errorBorder: const OutlineInputBorder(
-          borderSide:   BorderSide(
+          borderSide:BorderSide(
             color: Colors.red,
             width: 1.3,
           ),
@@ -76,16 +72,15 @@ class InputField extends StatelessWidget {
             color: Colors.red,
             width: 1.3,
           ),
-          
         ),
-                        prefixIcon: prefixIcon,
-                        suffixIcon: suffixIcon,
+            prefixIcon: prefixIcon,
+            suffixIcon: suffixIcon,
                       ),
                       obscureText:isObscureText??false ,
-                      
-                      controller: controller,textDirection: TextDirection.rtl,
+                      controller: controller,
+                      textDirection: TextDirection.rtl,
                       autofocus: false,
-                      keyboardType:textInputType ,
+                      keyboardType:textInputType,
                       style: Styles.instructionStyle,
                       validator: (value) {
                         if(value==null||value.isEmpty)
@@ -94,8 +89,7 @@ class InputField extends StatelessWidget {
                         }
                         return '';
                       },
-                
-                      
+
                     ),
       ],
     );

@@ -19,7 +19,6 @@ class _ChallengeAudienceState extends State<ChallengeAudience> {
   String selectedAudience = "اختار اللعبة"; // Default value
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   int selector=0;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +61,7 @@ class _ChallengeAudienceState extends State<ChallengeAudience> {
               Container(
                 margin: EdgeInsets.only(top: 40.sp),
                 child: Text(
-                  "اتحدى الجمهور",
+                  "اسئلتك",
                   style: Styles.headingStyle,
                 ),
               ),
@@ -112,7 +111,7 @@ class _ChallengeAudienceState extends State<ChallengeAudience> {
                    Container(
                     padding: const EdgeInsets.all(8),
                         width:const ScreenUtilInit().designSize.width,
-                        height: 365.h,
+                        height: 300.h,
                         decoration: const BoxDecoration(
                           borderRadius: BorderRadius.horizontal(left: Radius.circular(13),right: Radius.circular(13)),
                           color:  Color.fromRGBO(255, 255, 255, 0.5),
