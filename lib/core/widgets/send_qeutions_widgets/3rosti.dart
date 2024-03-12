@@ -4,16 +4,29 @@ import 'package:spa7o_ta7adii/core/widgets/cutom_button/custom_button.dart';
 import 'package:spa7o_ta7adii/core/widgets/image_picker_widget.dart/image_picker_widget.dart';
 
 
-class Arosty extends StatelessWidget{
+class Arosty extends StatefulWidget{
+  @override
+  State<Arosty> createState() => _ArostyState();
+}
+
+class _ArostyState extends State<Arosty> {
+  final TextEditingController playerController = TextEditingController();
+
+  final int index = 0;
+  @override
+  void dispose() {
+    // Dispose all controllers when the widget is disposed
+    playerController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return Column(
       children: [
-        ImagePickeR(),
-        InputField(hintText: 'اكتب الاجابة'),
+        InputField(hintText: 'اكتب اسم اللاعب',controller: playerController,),
        const Spacer(),
-        CustomButton(),
+        CustomButton(firstController: playerController,index: index,),
       ],
     );
   }
