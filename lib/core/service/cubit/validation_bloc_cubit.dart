@@ -6,7 +6,6 @@ part 'validation_bloc_state.dart';
 class ValidationBlocCubit extends Cubit<ValidationBlocState> {
   ValidationBlocCubit() : super(ValidationBlocInitial());
 
-
   void validationState(bool check){
     if(check){
       emit(ValidationBlocSucess());

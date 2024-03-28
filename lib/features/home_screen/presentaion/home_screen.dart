@@ -19,7 +19,6 @@ class HomeScreen extends StatelessWidget{
   body: Stack(
     alignment: Alignment.center,
     children: [
-   
       // Background Image with Blur
       Container(
         height: MediaQuery.of(context).size.height,

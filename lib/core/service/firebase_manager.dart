@@ -1,4 +1,6 @@
 
+import 'dart:math';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:spa7o_ta7adii/core/service/models/meenAnaDm.dart';
 import 'package:spa7o_ta7adii/core/service/models/meenSoraDm.dart';
@@ -22,10 +24,36 @@ withConverter(fromFirestore:
 static Future<void> addActingQuest(ActingDm actingDm){
   var collection = getActingCollection();
   var docs = collection.doc();
-  actingDm.id = docs.id;
+   actingDm.id = docs.id;
   return docs.set(actingDm);
 }
+static Future<QuerySnapshot<ActingDm>> getActing() async {
+  Random random = Random();
 
+  // Get a reference to the collection
+  CollectionReference<ActingDm> collectionRef = getActingCollection();
+
+  // Retrieve all document IDs from the collection
+  QuerySnapshot<ActingDm>  idQuerySnapshot =
+  await collectionRef.orderBy(FieldPath.documentId).get();
+
+  // Extract document IDs from the query snapshot
+  List<String> documentIds =
+  idQuerySnapshot.docs.map((doc) => doc.id).toList();
+
+  // Shuffle the document IDs to achieve randomness
+  documentIds.shuffle(random);
+
+  // Limit the query to the first document after shuffling (optional)
+  List<String> shuffledIds = documentIds.sublist(0, 1);
+
+  // Query Firestore using the shuffled IDs
+  QuerySnapshot<ActingDm> querySnapshot = await collectionRef
+      .where(FieldPath.documentId, whereIn: shuffledIds)
+      .get();
+
+  return querySnapshot;
+}
 static CollectionReference<BankDm> getBankCollection(){
   return FirebaseFirestore.instance.collection("BankQuest").
   withConverter(fromFirestore: (snapshot, options) {
@@ -69,7 +97,6 @@ static Future<void> addMeenAnaQuest(MeenAnaDm meenAnaDm){
   meenAnaDm.id = doc.id;
   return doc.set(meenAnaDm);
 }
-
 static CollectionReference<MeenSoraDm> getMeenSoraCollection(){
   return FirebaseFirestore.instance.collection("MeenSoraQuest").
   withConverter(fromFirestore: (snapshot, options) {
