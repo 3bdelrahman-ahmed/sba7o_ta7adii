@@ -108,7 +108,6 @@ class PasswordScreen extends StatelessWidget {
                   ),
                 ),
               );
-
               }
             ,
             listener: (context, state){
