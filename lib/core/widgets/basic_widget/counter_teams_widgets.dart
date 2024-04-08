@@ -7,12 +7,21 @@ import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart
 import '../../theming/colors.dart';
 import '../../theming/styles.dart';
 
-class CounterWidget extends StatelessWidget {
+class CounterTeamWidget extends StatelessWidget {
   int team1;
   int team2;
-  CounterWidget({
+  VoidCallback? onIncteamA;
+  VoidCallback? onIncteamB;
+  VoidCallback? onDecteamA;
+  VoidCallback? onDecteamB;
+
+  CounterTeamWidget({
    required this.team1,
-   required this.team2
+   required this.team2,
+    required this.onIncteamA,
+    required this.onIncteamB,
+    required this.onDecteamA,
+    required this.onDecteamB
 });
   Widget build(BuildContext context) {
     return Row(
@@ -37,9 +46,7 @@ class CounterWidget extends StatelessWidget {
             Row(
               children: [
                 GestureDetector(
-                  onTap:(){
-                   context.read<PasswordTamseeBlocCubit>().teamsDecreament("B");
-                         },
+                  onTap:onDecteamB,
                   child: Container(
                     decoration: BoxDecoration(
                       color: ColorsManager.Primary,
@@ -56,9 +63,7 @@ class CounterWidget extends StatelessWidget {
                   width: 10.w,
                 ),
                 GestureDetector(
-                  onTap:(){
-                    context.read<PasswordTamseeBlocCubit>().teamsIncreament("B");
-                  },
+                  onTap:onIncteamB,
                   child: Container(
                     decoration: BoxDecoration(
                       color: ColorsManager.Primary,
@@ -71,7 +76,6 @@ class CounterWidget extends StatelessWidget {
                           style: Styles.homeStyle,)),
                   ),
                 )
-
               ],
             )
           ],
@@ -97,9 +101,7 @@ class CounterWidget extends StatelessWidget {
             Row(
               children: [
                 GestureDetector(
-                  onTap:(){
-                    context.read<PasswordTamseeBlocCubit>().teamsDecreament('A');
-                  },
+                  onTap:onDecteamA,
                   child: Container(
                     decoration: BoxDecoration(
                       color: ColorsManager.Primary,
@@ -116,9 +118,7 @@ class CounterWidget extends StatelessWidget {
                   width: 10.w,
                 ),
                 GestureDetector(
-                  onTap:(){
-                    context.read<PasswordTamseeBlocCubit>().teamsIncreament('A');
-                  },
+                  onTap:onIncteamA,
                   child: Container(
                     decoration: BoxDecoration(
                       color: ColorsManager.Primary,

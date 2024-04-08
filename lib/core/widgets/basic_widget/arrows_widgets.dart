@@ -17,7 +17,7 @@ class ArrowsWidget extends StatelessWidget {
         Column(
           children: [
             IconButton(
-                onPressed: () {
+                onPressed: (){
                   context.read<PasswordTamseeBlocCubit>().getPlayer();
                 },
                 icon: Icon(

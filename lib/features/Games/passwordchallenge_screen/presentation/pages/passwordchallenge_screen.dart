@@ -13,7 +13,7 @@ import 'package:spa7o_ta7adii/core/theming/colors.dart';
 import 'package:spa7o_ta7adii/core/theming/styles.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/pasword_and_tamseel_states.dart';
-import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_widgets.dart';
+import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/timer_isrunning_widget.dart';
 
 import '../../../../../core/widgets/basic_widget/arrows_widgets.dart';
@@ -99,9 +99,13 @@ class PasswordScreen extends StatelessWidget {
                       ),
                        Padding(
                           padding: EdgeInsets.symmetric(horizontal: 15),
-                          child: CounterWidget(
+                          child: CounterTeamWidget(
                             team1: context.read<PasswordTamseeBlocCubit>().team1,
                           team2: context.read<PasswordTamseeBlocCubit>().team2,
+                            onDecteamA: ()=>context.read<PasswordTamseeBlocCubit>().teamsDecreament('A'),
+                            onIncteamA: ()=>context.read<PasswordTamseeBlocCubit>().teamsIncreament('A'),
+                            onDecteamB: ()=>context.read<PasswordTamseeBlocCubit>().teamsDecreament('B'),
+                            onIncteamB: ()=>context.read<PasswordTamseeBlocCubit>().teamsIncreament('B'),
                           )
                       )
                     ],

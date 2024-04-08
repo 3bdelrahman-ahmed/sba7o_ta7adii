@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/router/routes.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/validation_bloc_cubit.dart';
+import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/manager/cubit/bloc_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/pages/arosty_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/bank_screen/presentation/pages/bank_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/erza3s7_screen/presentation/pages/erza3_screen.dart';
@@ -30,6 +31,7 @@ class RootApp extends StatelessWidget {
       builder: (_, child) {
         return MultiBlocProvider(
           providers: [
+            BlocProvider(create: (context) => ArostyBlocCubit(),),
             BlocProvider(create: (context) => ValidationBlocCubit()),
             BlocProvider(create: (context)=> PasswordTamseeBlocCubit())
           ],

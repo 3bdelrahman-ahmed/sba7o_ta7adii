@@ -53,6 +53,8 @@ class PasswordTamseeBlocCubit extends Cubit<PasswordTamseelBlocState>
   }
     emit(CounterDecreamentState());
   }
+
+
  static const int maxSeconds = 30;
   int second = maxSeconds;
   Timer? timer;
