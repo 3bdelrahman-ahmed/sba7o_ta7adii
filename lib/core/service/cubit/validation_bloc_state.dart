@@ -1,10 +1,9 @@
 part of 'validation_bloc_cubit.dart';
 
 @immutable
-sealed class ValidationBlocState {}
+abstract class ValidationBlocState {}
 
 final class ValidationBlocInitial extends ValidationBlocState {}
-
 
 final class ValidationBlocSucess extends ValidationBlocState{}
 

@@ -61,7 +61,6 @@ class _CustomButtonState extends State<CustomButton> {
         else if (state is ValidationBlocError) {
          showToast(context,Icon(Icons.error),'املا كل الخانات',Colors.redAccent);
           print(state);
-
         }
       },
       builder: (context, state) {

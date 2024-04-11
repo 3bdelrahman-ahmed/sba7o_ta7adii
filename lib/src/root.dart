@@ -3,12 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/router/routes.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/validation_bloc_cubit.dart';
+import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/manager/cubit/bloc_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/pages/arosty_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/bank_screen/presentation/pages/bank_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/erza3s7_screen/presentation/pages/erza3_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/pages/labs_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/pages/meenana_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/pages/meenxelsora_screen.dart';
+import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/passwordchallenge_screen/presentation/pages/passwordchallenge_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/risk_screen/presentation/pages/risk_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/seba2_screen/presentation/pages/seba2_screen.dart';
@@ -27,8 +29,12 @@ class RootApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
-        return BlocProvider(
-          create: (context) => ValidationBlocCubit(),
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => ArostyBlocCubit(),),
+            BlocProvider(create: (context) => ValidationBlocCubit()),
+            BlocProvider(create: (context)=> PasswordTamseeBlocCubit())
+          ],
           child: MaterialApp(
             debugShowCheckedModeBanner: false,
             home: child,
