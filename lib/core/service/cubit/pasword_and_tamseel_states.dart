@@ -18,6 +18,3 @@ class SuccessGetPlayer extends PasswordTamseelBlocState{}
 
 class FailedGetPlayer extends PasswordTamseelBlocState{}
 
-class NextPlayerSuccsess extends PasswordTamseelBlocState{}
-
-class PreviousPlayerSuccess extends PasswordTamseelBlocState{}

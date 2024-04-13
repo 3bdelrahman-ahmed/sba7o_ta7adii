@@ -9,6 +9,7 @@ import 'package:spa7o_ta7adii/features/Games/bank_screen/presentation/pages/bank
 import 'package:spa7o_ta7adii/features/Games/erza3s7_screen/presentation/pages/erza3_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/pages/labs_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/pages/meenana_screen.dart';
+import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/pages/meenxelsora_screen.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/passwordchallenge_screen/presentation/pages/passwordchallenge_screen.dart';
@@ -31,6 +32,7 @@ class RootApp extends StatelessWidget {
       builder: (_, child) {
         return MultiBlocProvider(
           providers: [
+            BlocProvider(create: (context) => MeenXelsoraBlocCubit(),),
             BlocProvider(create: (context) => ArostyBlocCubit(),),
             BlocProvider(create: (context) => ValidationBlocCubit()),
             BlocProvider(create: (context)=> PasswordTamseeBlocCubit())

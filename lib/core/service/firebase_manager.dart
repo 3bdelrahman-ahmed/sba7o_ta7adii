@@ -112,6 +112,27 @@ static Future<void> addMeenSoraQuest(MeenSoraDm meensoraDm){
   return doc.set(meensoraDm);
 }
 
+static Future<QuerySnapshot<MeenSoraDm>> getSora() async{
+  Random random = Random();
+
+  CollectionReference<MeenSoraDm> collectionRef = getMeenSoraCollection();
+
+  QuerySnapshot<MeenSoraDm> idQuerySnapshot = await collectionRef.orderBy(FieldPath.documentId).get();
+
+  List<String> documentIds =
+  idQuerySnapshot.docs.map((doc) => doc.id).toList();
+
+  documentIds.shuffle(random);
+
+  List<String> shuffledIds = documentIds.sublist(0, 1);
+
+  QuerySnapshot<MeenSoraDm> querySnapshot = await collectionRef
+      .where(FieldPath.documentId, whereIn: shuffledIds)
+      .get();
+
+  return querySnapshot;
+}
+
 static CollectionReference<RiskDm> getRiskCollection(){
   return FirebaseFirestore.instance.collection("RiskQuest").
   withConverter<RiskDm>(fromFirestore: (snapshot, options) {
