@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
 import 'package:spa7o_ta7adii/core/theming/styles.dart';
@@ -75,17 +76,23 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
                   SizedBox(
                     height: 30.h,
                   ),
-                  AnimatedTextKit(
-                    animatedTexts: [
-                      TyperAnimatedText(
-                        InstructionsList.instr[widget.index],textStyle: Styles.instructionStyle,
-                        textAlign: TextAlign.end,
-                      speed: Duration(milliseconds: 15))
-                      ,
-                    ],
-                    displayFullTextOnTap: true,
-                    repeatForever: false,
-                    totalRepeatCount: 1,
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 450.h,
+                    child: SingleChildScrollView(
+                      child: AnimatedTextKit(
+                        animatedTexts: [
+                          TyperAnimatedText(
+                            InstructionsList.instr[widget.index],textStyle: Styles.instructionStyle,
+                            textAlign: TextAlign.end,
+                          speed: Duration(milliseconds: 15))
+                          ,
+                        ],
+                        displayFullTextOnTap: true,
+                        repeatForever: false,
+                        totalRepeatCount: 1,
+                      ),
+                    ),
                   ),
                   Spacer(),
                   Center(

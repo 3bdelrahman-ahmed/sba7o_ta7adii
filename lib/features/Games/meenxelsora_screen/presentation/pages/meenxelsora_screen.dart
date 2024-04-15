@@ -59,27 +59,27 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
         ),
         BlocConsumer<MeenXelsoraBlocCubit,MeenXelsoraBlocStates>(builder: (context, state){
            if (state is LoadingState)
-             return Center(
+             return const Center(
                child: CircularProgressIndicator
                  (strokeWidth: 5,backgroundColor: Colors.white,),
              );
-            else
+            else {
              return Padding(
             padding: EdgeInsets.only(top: 20),
             child: Column(
               children:[
-                ChangeSquadWidget(),
+                const ChangeSquadWidget(),
                SquadPhoto(),
                 SizedBox(
-                  height: 20.h,
+                  height: 10.h,
                 ),
                SquadName(),
                 PlayersButton(),
                 SizedBox(
-                  height: 20.h,
+                  height: 10.h,
                 ),
                 ShowNames(),
-                Spacer(),
+                SizedBox(height: 50.h,),
                 CounterTeamWidget(team1: context.read<MeenXelsoraBlocCubit>().team1,
                     team2: context.read<MeenXelsoraBlocCubit>().team2,
                     onIncteamA: ()=> context.read<MeenXelsoraBlocCubit>().teamsIncreament('A'),
@@ -89,6 +89,7 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
               ],
             ),
           );
+           }
         }, listener: (context, state) {
 
         },)
