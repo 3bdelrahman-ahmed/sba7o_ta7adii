@@ -1,0 +1,21 @@
+abstract class MeenAnaBlocStates {}
+
+class InitialState extends MeenAnaBlocStates{}
+
+class LoadingState extends MeenAnaBlocStates{}
+
+class CounterIncreamentState extends MeenAnaBlocStates{}
+
+class CounterDecreamentState extends MeenAnaBlocStates{}
+
+class AddClueState extends MeenAnaBlocStates{}
+
+class SuccessGetPlayer extends MeenAnaBlocStates{}
+
+class FailedGetPlayer extends MeenAnaBlocStates{}
+
+class TimerRunningState extends MeenAnaBlocStates{}
+
+class TimerPausedState extends MeenAnaBlocStates{}
+
+class TimerCompletedState extends MeenAnaBlocStates{}
