@@ -24,119 +24,125 @@ class CounterTeamWidget extends StatelessWidget {
     required this.onDecteamB
 });
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Column(
-          children: [
-            Text("الفريق التاني",style: Styles.instructionStyle,),
-            SizedBox(height: 3.h,),
-            Container(
-              width: 50.w,
-              height: 50.h,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(child: Text("$team2",style: GoogleFonts.roboto(
-                color : ColorsManager.Primary,
-                fontSize: 24,
-              ),)),
-            ),
-            SizedBox(height: 10.h,),
-            Row(
-              children: [
-                GestureDetector(
-                  onTap:onDecteamB,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: ColorsManager.Primary,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    width: 40.w,
-                    height: 40.h,
-                    child: Center(
-                        child: Text("-",
-                          style: Styles.homeStyle,)),
-                  ),
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                GestureDetector(
-                  onTap:onIncteamB,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: ColorsManager.Primary,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    width: 40.w,
-                    height: 40.h,
-                    child: Center(
-                        child: Text("+",
-                          style: Styles.homeStyle,)),
-                  ),
-                )
-              ],
-            )
-          ],
-        ),
-        Spacer(),
-        Column(
-          children: [
-            Text("الفريق الأول",style: Styles.instructionStyle,),
-            SizedBox(height: 3.h,),
-            Container(
-              width: 50.w,
-              height: 50.h,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Center(child: Text("$team1",style: GoogleFonts.roboto(
-                color : ColorsManager.Primary,
-                fontSize: 24,
-              ),)),
-            ),
-            SizedBox(height: 10.h,),
-            Row(
-              children: [
-                GestureDetector(
-                  onTap:onDecteamA,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: ColorsManager.Primary,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    width: 40.w,
-                    height: 40.h,
-                    child: Center(
-                        child: Text("-",
-                          style: Styles.homeStyle,)),
-                  ),
-                ),
-                SizedBox(
-                  width: 10.w,
-                ),
-                GestureDetector(
-                  onTap:onIncteamA,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: ColorsManager.Primary,
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    width: 40.w,
-                    height: 40.h,
-                    child: Center(
-                        child: Text("+",
-                          style: Styles.homeStyle,)),
-                  ),
-                )
+    return Container(
+      width: 300.w,
+      height: 150.h,
 
-              ],
-            )
-          ],
-        ),
-      ],
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Column(
+            children: [
+              Text("الفريق التاني",style: Styles.instructionStyle,),
+              SizedBox(height: 3.h,),
+              Container(
+                width: 50.w,
+                height: 50.h,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(child: Text("$team2",style: GoogleFonts.roboto(
+                  color : ColorsManager.Primary,
+                  fontSize: 24,
+                ),)),
+              ),
+              SizedBox(height: 10.h,),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap:onDecteamB,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: ColorsManager.Primary,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      width: 40.w,
+                      height: 40.h,
+                      child: Center(
+                          child: Text("-",
+                            style: Styles.homeStyle,)),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  GestureDetector(
+                    onTap:onIncteamB,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: ColorsManager.Primary,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      width: 40.w,
+                      height: 40.h,
+                      child: Center(
+                          child: Text("+",
+                            style: Styles.homeStyle,)),
+                    ),
+                  )
+                ],
+              )
+            ],
+          ),
+          Spacer(),
+          Column(
+            children: [
+              Text("الفريق الأول",style: Styles.instructionStyle,),
+              SizedBox(height: 3.h,),
+              Container(
+                width: 50.w,
+                height: 50.h,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(child: Text("$team1",style: GoogleFonts.roboto(
+                  color : ColorsManager.Primary,
+                  fontSize: 24,
+                ),)),
+              ),
+              SizedBox(height: 10.h,),
+              Row(
+                children: [
+                  GestureDetector(
+                    onTap:onDecteamA,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: ColorsManager.Primary,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      width: 40.w,
+                      height: 40.h,
+                      child: Center(
+                          child: Text("-",
+                            style: Styles.homeStyle,)),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 10.w,
+                  ),
+                  GestureDetector(
+                    onTap:onIncteamA,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: ColorsManager.Primary,
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      width: 40.w,
+                      height: 40.h,
+                      child: Center(
+                          child: Text("+",
+                            style: Styles.homeStyle,)),
+                    ),
+                  )
+      
+                ],
+              )
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

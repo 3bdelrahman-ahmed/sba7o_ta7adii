@@ -18,7 +18,7 @@ class SquadPhoto extends StatelessWidget {
           child: InteractiveViewer(
             child: CachedNetworkImage(
               imageUrl: imageUrl!,
-              placeholder: (context, url) => Center(
+              placeholder: (context, url) => const Center(
                 child: CircularProgressIndicator(
                   color: Colors.white,
                 ),

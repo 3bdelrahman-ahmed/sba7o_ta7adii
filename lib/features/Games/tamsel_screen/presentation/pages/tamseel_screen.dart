@@ -22,6 +22,7 @@ import '../../../../../core/widgets/basic_widget/playername_widget.dart';
 import '../../../../../core/widgets/basic_widget/timer_isstopped_widget.dart';
 import '../../../../../core/widgets/basic_widget/timer_widgets.dart';
 import '../../../../../core/widgets/basic_widget/timeriscompleted_widget.dart';
+import '../../../../../core/widgets/layout_widget.dart';
 
 class TamseelScreen extends StatelessWidget {
   const TamseelScreen({super.key});
@@ -29,99 +30,74 @@ class TamseelScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Stack(
-        children: [
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Image.asset(
-              'assets/staduim.jpeg',
-              fit: BoxFit.fill,
-            ),
-          ),
-          BackdropFilter(
-            filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-            // Adjust the sigma values for the blur intensity
-            child: Container(
-              color: Colors.transparent,
-              height: MediaQuery.of(context).size.height,
-              width: MediaQuery.of(context).size.width,
-            ),
-          ),
-          Center(
-            child: ImageFiltered(
-              imageFilter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-              child: Image.asset(
-                'assets/noso7y.png',
-                scale: 7.5,
-              ),
-            ),
-          ),
-          BlocConsumer<PasswordTamseeBlocCubit,PasswordTamseelBlocState>(
-            builder: (context, state) {
-              return Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 45),
-                  child: Column(
-                    children: [
-                      ChangeWidget(onChanged:()=> context.read<PasswordTamseeBlocCubit>().getPlayer()),
-                      SizedBox(
-                        height: 50,
-                      ),
-                      if(state is LoadingState)
-                        Container(
-                            width: 320.w,
-                            height: 160.h,
-                            child: Center(child:
-                            CircularProgressIndicator
-                              (strokeWidth: 5,backgroundColor: Colors.white,)))
-                      else if (state is FailedGetPlayer)
-                        Center(child: Text("Something went wrong"),)
-                      else
-                        PlayersWidget(),
-                      SizedBox(
-                        height: 40.h,
-                      ),
-                      BuildTimerWidget(),
-                      if(state is TimerRunningState)
-                        TimerIsRunning(second:
-                        context.read<PasswordTamseeBlocCubit>().second,
-                            maxSeconds: PasswordTamseeBlocCubit.maxSeconds)
-                      else if(state is TimerPausedState)
-                        TimerStopped(
-                          second: context.read<PasswordTamseeBlocCubit>().second,
-                          maxSeconds: PasswordTamseeBlocCubit.maxSeconds,)
-                      else
-                        TimerCompleted(
-                            second: context.read<PasswordTamseeBlocCubit>().second,
-                            maxSeconds: PasswordTamseeBlocCubit.maxSeconds),
-                      SizedBox(
-                        height: 40.h,
-                      ),
-                      Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
-                          child: CounterTeamWidget(
-                            team1: context.read<PasswordTamseeBlocCubit>().team1,
-                            team2: context.read<PasswordTamseeBlocCubit>().team2,
-                            onDecteamA: ()=>context.read<PasswordTamseeBlocCubit>().teamsDecreament('A'),
-                            onIncteamA: ()=>context.read<PasswordTamseeBlocCubit>().teamsIncreament('A'),
-                            onDecteamB: ()=>context.read<PasswordTamseeBlocCubit>().teamsIncreament('B'),
-                            onIncteamB: ()=>context.read<PasswordTamseeBlocCubit>().teamsDecreament('B'),
-                          )
-                      )
-                    ],
+        body: LayoutWidget(
+      buttonWidget: ChangeWidget(
+          onChanged: () => context.read<PasswordTamseeBlocCubit>().getPlayer()),
+      widget: BlocConsumer<PasswordTamseeBlocCubit, PasswordTamseelBlocState>(
+        builder: (context, state) {
+          return Center(
+            child:  Column(
+                children: [
+                  if (state is LoadingState)
+                    Container(
+                        width: 320.w,
+                        height: 160.h,
+                        child: const Center(
+                            child: CircularProgressIndicator(
+                          strokeWidth: 5,
+                          backgroundColor: Colors.white,
+                        )))
+                  else if (state is FailedGetPlayer)
+                    const Center(
+                      child: Text("Something went wrong"),
+                    )
+                  else
+                    PlayersWidget(),
+                  SizedBox(
+                    height: 40.h,
                   ),
-                ),
-              );
-
-            }
-            ,
-            listener: (context, state){
-
-            },
-          )
-        ],
+                  BuildTimerWidget(),
+                  if (state is TimerRunningState)
+                    TimerIsRunning(
+                        second: context.read<PasswordTamseeBlocCubit>().second,
+                        maxSeconds: PasswordTamseeBlocCubit.maxSeconds)
+                  else if (state is TimerPausedState)
+                    TimerStopped(
+                      second: context.read<PasswordTamseeBlocCubit>().second,
+                      maxSeconds: PasswordTamseeBlocCubit.maxSeconds,
+                    )
+                  else
+                    TimerCompleted(
+                        second: context.read<PasswordTamseeBlocCubit>().second,
+                        maxSeconds: PasswordTamseeBlocCubit.maxSeconds),
+                  SizedBox(
+                    height: 25.h,
+                  ),
+                  Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 15),
+                      child: CounterTeamWidget(
+                        team1: context.read<PasswordTamseeBlocCubit>().team1,
+                        team2: context.read<PasswordTamseeBlocCubit>().team2,
+                        onDecteamA: () => context
+                            .read<PasswordTamseeBlocCubit>()
+                            .teamsDecreament('A'),
+                        onIncteamA: () => context
+                            .read<PasswordTamseeBlocCubit>()
+                            .teamsIncreament('A'),
+                        onDecteamB: () => context
+                            .read<PasswordTamseeBlocCubit>()
+                            .teamsIncreament('B'),
+                        onIncteamB: () => context
+                            .read<PasswordTamseeBlocCubit>()
+                            .teamsDecreament('B'),
+                      ))
+                ],
+              ),
+            
+          );
+        },
+        listener: (context, state) {},
       ),
-    );
+    ));
   }
 }

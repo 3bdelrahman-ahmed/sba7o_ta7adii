@@ -1,3 +1,11 @@
+/*   READ ME
+  LayOut widget where the statics widget are standard like background ..
+  and the change button 
+  spaces between widgets you don't need now to start with padding top it is handled here 
+  you just pass the widget of the content as in the tamseel / arosty /meenx sora/ password
+  look at the prevoius screens to understand the full pic 
+ */
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,7 +16,8 @@ import 'basic_widget/playername_widget.dart';
 
 class LayoutWidget extends StatelessWidget {
   final Widget widget;
-  const LayoutWidget({super.key, required this.widget});
+  final Widget buttonWidget;
+  const LayoutWidget({super.key, required this.widget, required this.buttonWidget});
 
   @override
   Widget build(BuildContext context) {
@@ -42,21 +51,12 @@ class LayoutWidget extends StatelessWidget {
         ),
         Positioned(
           top: 20.h,
-          right: 0,
-          child: const ArrowsWidget(),
+          right: 20.h,
+          child: buttonWidget
         ),
         SizedBox(
           height: 35.h,
         ),
-        // Positioned(
-        //   top: 150.h,
-        //   left: 30.h,
-        //   right: 30.h,
-        //   child: 
-        //       PlayersWidget(),
-          
-        // ),
-        
          Positioned(
           top: 150.h,
           left: 30.h,

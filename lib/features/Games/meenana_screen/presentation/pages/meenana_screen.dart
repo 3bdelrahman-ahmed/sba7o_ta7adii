@@ -8,11 +8,10 @@ import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 
 import 'dart:ui' as ui;
 
-import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
-import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_states.dart';
-import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/widgets/Clues_widget.dart';
-
 import '../../../../../core/theming/colors.dart';
+import '../manager/cubit/meenana_cubit.dart';
+import '../manager/cubit/meenana_states.dart';
+import '../widgets/Clues_widget.dart';
 
 class MeenAnaScreen extends StatelessWidget {
   const MeenAnaScreen({super.key});

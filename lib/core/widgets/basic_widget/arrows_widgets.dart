@@ -20,7 +20,7 @@ class ArrowsWidget extends StatelessWidget {
                 onPressed: (){
                   context.read<PasswordTamseeBlocCubit>().getPlayer();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.repeat_on_outlined,
                   color: Colors.red,
                   size: 40,
@@ -28,7 +28,7 @@ class ArrowsWidget extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 10),
               child: Text(
-                "تغيير اللاعب",
+                "تغير",
                 style: Styles.instructionStyle
                     .copyWith(fontSize: 20),
               ),
