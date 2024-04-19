@@ -20,7 +20,7 @@ class TimerStopped extends StatelessWidget {
       children: [
         SizedBox(height: 40.h,),
         Center(
-          child:  Row(
+          child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               GestureDetector(

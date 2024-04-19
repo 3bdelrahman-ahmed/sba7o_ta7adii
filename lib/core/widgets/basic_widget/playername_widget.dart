@@ -9,7 +9,7 @@ class PlayersWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String? name;
-  name = context.watch<PasswordTamseeBlocCubit>().name;
+  name = context.read<PasswordTamseeBlocCubit>().name;
     return Container(
         width: 320.w,
         height: 160.h,

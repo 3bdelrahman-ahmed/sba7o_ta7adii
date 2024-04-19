@@ -11,6 +11,7 @@ import 'dart:ui' as ui;
 
 import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/manager/cubit/bloc_states.dart';
 
+import '../../../../../core/widgets/basic_widget/change_widget.dart';
 import '../../../../../core/widgets/basic_widget/counter_widget.dart';
 import '../../../../../core/widgets/basic_widget/playername_widget.dart';
 
@@ -54,13 +55,13 @@ class ArostyScreen extends StatelessWidget {
                  padding: EdgeInsets.only(top:45),
                  child: Column(
                    children: [
-                     ArrowsWidget(),
-                     SizedBox(
+                     ChangeWidget(onChanged:()=> context.read<PasswordTamseeBlocCubit>().getPlayer()),
+                 SizedBox(
                        height: 50,
                      ),
                      if(stateP is LoadingState)
                        Container(
-                           width: 300.w,
+                           width: 320.w,
                            height: 160.h,
                            child: Center(child:
                            CircularProgressIndicator

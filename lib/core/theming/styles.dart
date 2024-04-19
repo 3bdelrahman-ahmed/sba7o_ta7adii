@@ -23,6 +23,11 @@ class Styles {
     fontSize: 24,
   );
 
+  static TextStyle CluesStyle = GoogleFonts.katibeh(
+    color: Colors.white,
+    fontSize: 18,
+  );
+
   static TextStyle GamesListStyle =  GoogleFonts.katibeh(
     color: Colors.black,
     fontSize: 24,

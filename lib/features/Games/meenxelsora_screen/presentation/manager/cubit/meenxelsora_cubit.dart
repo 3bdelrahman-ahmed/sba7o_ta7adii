@@ -55,6 +55,7 @@ class MeenXelsoraBlocCubit extends Cubit<MeenXelsoraBlocStates>{
         players = meenSoraDm!.players;
         team = meenSoraDm!.teamsheet;
         ImageUrl = meenSoraDm!.imageurl;
+        isVisible = false;
         emit(SuccessGetSquad());
        }
     }on Exception catch(e)

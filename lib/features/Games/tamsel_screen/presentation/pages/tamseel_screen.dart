@@ -17,6 +17,7 @@ import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.da
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/timer_isrunning_widget.dart';
 
 import '../../../../../core/widgets/basic_widget/arrows_widgets.dart';
+import '../../../../../core/widgets/basic_widget/change_widget.dart';
 import '../../../../../core/widgets/basic_widget/playername_widget.dart';
 import '../../../../../core/widgets/basic_widget/timer_isstopped_widget.dart';
 import '../../../../../core/widgets/basic_widget/timer_widgets.dart';
@@ -63,14 +64,14 @@ class TamseelScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 45),
                   child: Column(
                     children: [
-                      ArrowsWidget(),
+                      ChangeWidget(onChanged:()=> context.read<PasswordTamseeBlocCubit>().getPlayer()),
                       SizedBox(
                         height: 50,
                       ),
                       if(state is LoadingState)
                         Container(
-                            width: 300.w,
-                            height: 150.h,
+                            width: 320.w,
+                            height: 160.h,
                             child: Center(child:
                             CircularProgressIndicator
                               (strokeWidth: 5,backgroundColor: Colors.white,)))

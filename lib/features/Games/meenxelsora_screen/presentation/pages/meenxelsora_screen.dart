@@ -1,22 +1,16 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.dart';
-import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 import 'dart:ui' as ui;
-import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_bloc_states.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/change_widget.dart';
+import 'package:spa7o_ta7adii/core/widgets/basic_widget/change_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/players_buttons_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/show_names_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/squad_name_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/squad_photo_widget.dart';
 
-import '../../../../../core/theming/colors.dart';
 class MeenXelsoraScreen extends StatefulWidget {
  const MeenXelsoraScreen({super.key});
 
@@ -58,29 +52,30 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
           ),
         ),
         BlocConsumer<MeenXelsoraBlocCubit,MeenXelsoraBlocStates>(builder: (context, state){
-           if (state is LoadingState)
+           if (state is LoadingState) {
              return const Center(
                child: CircularProgressIndicator
-                 (strokeWidth: 5,backgroundColor: Colors.white,),
+                 (strokeWidth: 54,backgroundColor: Colors.white,),
              );
-            else {
+           } else {
              return Padding(
-            padding: EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 20),
             child: Column(
               children:[
-                const ChangeSquadWidget(),
+                ChangeWidget(onChanged:()=> context.read<MeenXelsoraBlocCubit>().getSquad(),),
                SquadPhoto(),
                 SizedBox(
-                  height: 10.h,
+                  height: 20.h,
                 ),
                SquadName(),
                 PlayersButton(),
                 SizedBox(
-                  height: 10.h,
+                  height: 20.h,
                 ),
-                ShowNames(),
-                SizedBox(height: 50.h,),
-                CounterTeamWidget(team1: context.read<MeenXelsoraBlocCubit>().team1,
+                 ShowNames(),
+                 Spacer(),
+                CounterTeamWidget(
+                    team1: context.read<MeenXelsoraBlocCubit>().team1,
                     team2: context.read<MeenXelsoraBlocCubit>().team2,
                     onIncteamA: ()=> context.read<MeenXelsoraBlocCubit>().teamsIncreament('A'),
                     onIncteamB: ()=> context.read<MeenXelsoraBlocCubit>().teamsIncreament('B'),
