@@ -41,7 +41,7 @@ class TamseelScreen extends StatelessWidget {
                   if (state is LoadingState)
                     Container(
                         width: 320.w,
-                        height: 160.h,
+                        height: 200.h,
                         child: const Center(
                             child: CircularProgressIndicator(
                           strokeWidth: 5,

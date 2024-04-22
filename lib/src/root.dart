@@ -20,6 +20,8 @@ import 'package:spa7o_ta7adii/features/Games/tamsel_screen/presentation/pages/ta
 import 'package:spa7o_ta7adii/features/on_boarding_screen/presentaion/onboarding_screen.dart';
 import 'package:spa7o_ta7adii/features/home_screen/presentaion/home_screen.dart';
 
+import '../features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
+
 class RootApp extends StatelessWidget {
   const RootApp({Key? key}) : super(key: key);
 
@@ -33,7 +35,7 @@ class RootApp extends StatelessWidget {
       builder: (_, child) {
         return MultiBlocProvider(
           providers: [
-            // BlocProvider(create: (context) => MeenAnaBlocCubit(),),
+            BlocProvider(create: (context) => MeenAnaBlocCubit(),),
             BlocProvider(create: (context) => MeenXelsoraBlocCubit(),),
             BlocProvider(create: (context) => ArostyBlocCubit(),),
             BlocProvider(create: (context) => ValidationBlocCubit()),

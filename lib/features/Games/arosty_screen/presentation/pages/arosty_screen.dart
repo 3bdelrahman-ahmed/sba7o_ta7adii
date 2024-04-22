@@ -31,12 +31,12 @@ class ArostyScreen extends StatelessWidget {
                      if(stateP is LoadingState)
                        Container(
                            width: 320.w,
-                           height: 160.h,
+                           height: 200.h,
                            child: const Center(child:
                            CircularProgressIndicator
                              (strokeWidth: 5,backgroundColor: Colors.white,)))
                      else if (stateP is FailedGetPlayer)
-                     const  Center(child: Text("Something went wrong"),)
+                     const Center(child: Text("Something went wrong"),)
                      else
                        PlayersWidget(),
                      SizedBox(

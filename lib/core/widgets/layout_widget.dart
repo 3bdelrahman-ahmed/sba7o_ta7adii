@@ -58,10 +58,10 @@ class LayoutWidget extends StatelessWidget {
           height: 35.h,
         ),
          Positioned(
-          top: 150.h,
-          left: 30.h,
-          right: 30.h,
-          child: 
+          top: 110.h,
+          left: 10.h,
+          right: 10.h,
+          child:
              widget
           
         )

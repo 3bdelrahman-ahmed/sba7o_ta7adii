@@ -97,6 +97,28 @@ static Future<void> addMeenAnaQuest(MeenAnaDm meenAnaDm){
   meenAnaDm.id = doc.id;
   return doc.set(meenAnaDm);
 }
+static Future<QuerySnapshot<MeenAnaDm>> getMeenAna() async{
+  Random random = Random();
+
+  CollectionReference<MeenAnaDm> collectionRef = getMeenAnaCollection();
+
+  QuerySnapshot<MeenAnaDm> idQuerySnapshot = await collectionRef.orderBy(FieldPath.documentId).get();
+
+  List<String> documentIds =
+  idQuerySnapshot.docs.map((doc) => doc.id).toList();
+
+  documentIds.shuffle(random);
+
+  List<String> shuffledIds = documentIds.sublist(0, 1);
+
+  QuerySnapshot<MeenAnaDm> querySnapshot = await collectionRef
+      .where(FieldPath.documentId, whereIn: shuffledIds)
+      .get();
+
+  return querySnapshot;
+}
+
+
 static CollectionReference<MeenSoraDm> getMeenSoraCollection(){
   return FirebaseFirestore.instance.collection("MeenSoraQuest").
   withConverter(fromFirestore: (snapshot, options) {

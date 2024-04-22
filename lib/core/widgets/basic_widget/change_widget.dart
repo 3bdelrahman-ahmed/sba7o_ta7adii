@@ -20,13 +20,10 @@ class ChangeWidget extends StatelessWidget {
                     color: Colors.red,
                     size: 40,
                   )),
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: Text(
-                  "تغيير",
-                  style: Styles.instructionStyle
-                      .copyWith(fontSize: 20),
-                ),
+              Text(
+                "تغيير",
+                style: Styles.instructionStyle
+                    .copyWith(fontSize: 20),
               )
             ],
           )

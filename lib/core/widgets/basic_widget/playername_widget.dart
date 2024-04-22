@@ -11,8 +11,8 @@ class PlayersWidget extends StatelessWidget {
     String? name;
   name = context.read<PasswordTamseeBlocCubit>().name;
     return Container(
-        width: 320.w,
-        height: 160.h,
+        width: MediaQuery.sizeOf(context).width,
+        height: 200.h,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,

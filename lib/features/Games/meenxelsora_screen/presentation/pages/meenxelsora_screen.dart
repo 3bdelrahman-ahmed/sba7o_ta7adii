@@ -35,7 +35,7 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
           if (state is LoadingState) {
             return const Center(
               child: CircularProgressIndicator(
-                strokeWidth: 54,
+                strokeWidth: 5,
                 backgroundColor: Colors.white,
               ),
             );
@@ -53,7 +53,7 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
                 ),
                 ShowNames(),
                 SizedBox(
-                  height: 20.h,
+                  height: 10.h,
                 ),
                 CounterTeamWidget(
                     team1: context.read<MeenXelsoraBlocCubit>().team1,

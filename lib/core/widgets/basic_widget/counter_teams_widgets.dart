@@ -36,8 +36,8 @@ class CounterTeamWidget extends StatelessWidget {
               Text("الفريق التاني",style: Styles.instructionStyle,),
               SizedBox(height: 3.h,),
               Container(
-                width: 50.w,
-                height: 50.h,
+                width: 60.w,
+                height: 60.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),
@@ -91,8 +91,8 @@ class CounterTeamWidget extends StatelessWidget {
               Text("الفريق الأول",style: Styles.instructionStyle,),
               SizedBox(height: 3.h,),
               Container(
-                width: 50.w,
-                height: 50.h,
+                width: 60.w,
+                height: 60.h,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(10),

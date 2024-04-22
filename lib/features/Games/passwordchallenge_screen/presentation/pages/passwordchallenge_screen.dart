@@ -43,7 +43,7 @@ class PasswordScreen extends StatelessWidget {
                       if(state is LoadingState)
                    Container(
                        width: 320.w,
-                       height: 160.h,
+                       height: 200.h,
                        child: Center(child:
                        CircularProgressIndicator
                          (strokeWidth: 5,backgroundColor: Colors.white,)))

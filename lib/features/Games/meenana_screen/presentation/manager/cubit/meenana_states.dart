@@ -8,11 +8,13 @@ class CounterIncreamentState extends MeenAnaBlocStates{}
 
 class CounterDecreamentState extends MeenAnaBlocStates{}
 
+class changeVisibiltyState extends MeenAnaBlocStates{}
+
 class AddClueState extends MeenAnaBlocStates{}
 
-class SuccessGetPlayer extends MeenAnaBlocStates{}
+class SuccessGetMeenAnaPlayer extends MeenAnaBlocStates{}
 
-class FailedGetPlayer extends MeenAnaBlocStates{}
+class FailedGetMeenAnaPlayer extends MeenAnaBlocStates{}
 
 class TimerRunningState extends MeenAnaBlocStates{}
 
