@@ -10,7 +10,7 @@ import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.da
 import 'package:spa7o_ta7adii/core/widgets/layout_widget.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/widgets/tableof_clues.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/players_buttons_widget.dart';
+import 'package:spa7o_ta7adii/core/widgets/basic_widget/answer_button_widget.dart';
 
 import 'dart:ui' as ui;
 

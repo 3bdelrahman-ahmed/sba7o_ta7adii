@@ -6,7 +6,6 @@ import 'package:spa7o_ta7adii/core/service/models/meenAnaDm.dart';
 import 'package:spa7o_ta7adii/core/service/models/meenSoraDm.dart';
 import 'package:spa7o_ta7adii/core/service/models/riskDm.dart';
 import 'package:spa7o_ta7adii/core/service/models/seba2Dm.dart';
-
 import 'models/actingDm.dart';
 import 'models/bankDm.dart';
 import 'models/labsDm.dart';
@@ -32,26 +31,20 @@ static Future<QuerySnapshot<ActingDm>> getActing() async {
 
   // Get a reference to the collection
   CollectionReference<ActingDm> collectionRef = getActingCollection();
-
   // Retrieve all document IDs from the collection
   QuerySnapshot<ActingDm>  idQuerySnapshot =
   await collectionRef.orderBy(FieldPath.documentId).get();
-
   // Extract document IDs from the query snapshot
   List<String> documentIds =
   idQuerySnapshot.docs.map((doc) => doc.id).toList();
-
   // Shuffle the document IDs to achieve randomness
   documentIds.shuffle(random);
-
   // Limit the query to the first document after shuffling (optional)
   List<String> shuffledIds = documentIds.sublist(0, 1);
-
   // Query Firestore using the shuffled IDs
   QuerySnapshot<ActingDm> querySnapshot = await collectionRef
       .where(FieldPath.documentId, whereIn: shuffledIds)
       .get();
-
   return querySnapshot;
 }
 static CollectionReference<BankDm> getBankCollection(){
@@ -83,6 +76,21 @@ static Future<void> addLabsQuest(LabsDm labsDm){
   labsDm.id = doc.id;
   return doc.set(labsDm);
 }
+static Future<QuerySnapshot<LabsDm>> getLabs() async {
+  Random random = Random();
+  CollectionReference<LabsDm> collectionRef = getLabsCollection();
+  QuerySnapshot<LabsDm>  idQuerySnapshot =
+  await collectionRef.orderBy(FieldPath.documentId).get();
+  List<String> documentIds =
+  idQuerySnapshot.docs.map((doc) => doc.id).toList();
+  documentIds.shuffle(random);
+  List<String> shuffledIds = documentIds.sublist(0, 1);
+  QuerySnapshot<LabsDm> querySnapshot = await collectionRef
+      .where(FieldPath.documentId, whereIn: shuffledIds)
+      .get();
+  return querySnapshot;
+}
+
 static CollectionReference<MeenAnaDm> getMeenAnaCollection(){
   return FirebaseFirestore.instance.collection("MeenAnaQuest").
   withConverter(fromFirestore: (snapshot, options) {

@@ -4,13 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Styles {
+abstract class Styles {
   static TextStyle homeStyle =  GoogleFonts.habibi(
       color: Colors.white,
       fontSize: 20.sp,
       fontWeight: FontWeight.bold
   );
 
+  static TextStyle counterNumberStyle =  GoogleFonts.dotGothic16(
+      color: Colors.white,
+      fontSize: 25.sp,
+      fontWeight: FontWeight.bold
+  );
 
   static TextStyle headingStyle =  GoogleFonts.habibi(
       color: Colors.white,

@@ -27,7 +27,6 @@ class CounterTeamWidget extends StatelessWidget {
     return Container(
       width: 300.w,
       height: 150.h,
-
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -39,13 +38,10 @@ class CounterTeamWidget extends StatelessWidget {
                 width: 60.w,
                 height: 60.h,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(child: Text("$team2",style: GoogleFonts.roboto(
-                  color : ColorsManager.Primary,
-                  fontSize: 24,
-                ),)),
+                child: Center(child: Text("$team2",style: Styles.counterNumberStyle)),
               ),
               SizedBox(height: 10.h,),
               Row(
@@ -94,13 +90,10 @@ class CounterTeamWidget extends StatelessWidget {
                 width: 60.w,
                 height: 60.h,
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(child: Text("$team1",style: GoogleFonts.roboto(
-                  color : ColorsManager.Primary,
-                  fontSize: 24,
-                ),)),
+                child: Center(child: Text("$team1",style: Styles.counterNumberStyle)),
               ),
               SizedBox(height: 10.h,),
               Row(

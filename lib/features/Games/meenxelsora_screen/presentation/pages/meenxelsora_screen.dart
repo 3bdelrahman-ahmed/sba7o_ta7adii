@@ -7,7 +7,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_bloc_states.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/change_widget.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/players_buttons_widget.dart';
+import 'package:spa7o_ta7adii/core/widgets/basic_widget/answer_button_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/show_names_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/squad_name_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/squad_photo_widget.dart';
@@ -47,11 +47,17 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
                   height: 15.h,
                 ),
                 SquadName(),
-                PlayersButton(),
+                ShowAnswersButton(
+                  isVisible: context.read<MeenXelsoraBlocCubit>().isVisible,
+                  onChange: ()=>context.read<MeenXelsoraBlocCubit>().changeVisibility(),
+                ),
                 SizedBox(
                   height: 10.h,
                 ),
-                ShowNames(),
+                ShowAnswers(
+                  isVisible: context.read<MeenXelsoraBlocCubit>().isVisible,
+                  Answers: context.read<MeenXelsoraBlocCubit>().players,
+                ),
                 SizedBox(
                   height: 10.h,
                 ),
