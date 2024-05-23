@@ -6,19 +6,21 @@ import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/man
 import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 
-class ShowNames extends StatelessWidget {
-  const ShowNames({super.key});
-
+class ShowAnswers extends StatelessWidget {
+  const ShowAnswers({super.key,
+  required this.isVisible,
+  required this.Answers});
+  final String? Answers;
+  final bool isVisible;
   @override
   Widget build(BuildContext context) {
-    String? Players = context.read<MeenXelsoraBlocCubit>().players;
-    return Visibility(visible: context.read<MeenXelsoraBlocCubit>().isVisible,
+    return Visibility(visible: isVisible,
       maintainSize: true,
       maintainState: true,
       maintainAnimation: true,
       child: Container(
         width: 340.w,
-        height: 150.h,
+        height: 160.h,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -33,7 +35,7 @@ class ShowNames extends StatelessWidget {
         child: SingleChildScrollView(
           child: Padding(
             padding: EdgeInsets.all(10),
-            child: Text(Players! ,
+            child: Text(Answers ?? " Error",
               textDirection: TextDirection.rtl,
               style: Styles.instructionStyle,),
           ),

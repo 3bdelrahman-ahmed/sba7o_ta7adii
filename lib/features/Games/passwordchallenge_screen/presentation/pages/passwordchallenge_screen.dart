@@ -31,9 +31,9 @@ class PasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: LayoutWidget(
-        buttonWidget:   ChangeWidget(onChanged:()=> context.read<PasswordTamseeBlocCubit>().getPlayer()), 
+        buttonWidget:  ChangeWidget(onChanged:()=> context.read<PasswordTamseeBlocCubit>().getPlayer()),
         widget:   BlocConsumer<PasswordTamseeBlocCubit,PasswordTamseelBlocState>(
-            builder: (context, state) {
+            builder: (context, state){
              return Center(
                   child: Column(
                     children: [
