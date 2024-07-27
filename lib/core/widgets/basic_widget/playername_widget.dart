@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/utils/colors.dart';
+import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 
 class PlayersWidget extends StatelessWidget {

@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
+import 'package:spa7o_ta7adii/core/utils/app_images.dart';
 import '../../../core/router/routes.dart';
-import '../../../core/theming/colors.dart';
+import '../../../core/utils/colors.dart';
 
-class OnBoardingScreen extends StatefulWidget {
+class SplashScreen extends StatefulWidget {
   static String route = "Splash";
 
   @override
-  State<OnBoardingScreen> createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<OnBoardingScreen> {
+class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
@@ -45,7 +46,7 @@ class _SplashScreenState extends State<OnBoardingScreen> {
         children: [
           Center(
               child: Image.asset(
-                "assets/saba7o.png",
+                AppImages.saba7o,
                 width: 300,
                 height: 300,
               )),

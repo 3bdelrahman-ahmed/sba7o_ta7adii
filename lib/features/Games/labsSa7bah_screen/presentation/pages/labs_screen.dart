@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/change_widget.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.dart';
-import 'package:spa7o_ta7adii/core/widgets/basic_widget/playername_widget.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/answer_button_widget.dart';
-import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_bloc_states.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/mazad_counter.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/quest_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/start_to_play.dart';
-
-import '../../../../../core/theming/colors.dart';
 import '../../../../../core/widgets/layout_widget.dart';
 import '../../../meenxelsora_screen/presentation/widget/show_names_widget.dart';
 

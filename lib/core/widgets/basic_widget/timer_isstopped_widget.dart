@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../utils/colors.dart';
+import '../../utils/styles.dart';
 
 class TimerStopped extends StatelessWidget {
   TimerStopped({
@@ -22,7 +22,7 @@ class TimerStopped extends StatelessWidget {
         Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+            children:[
               GestureDetector(
                 onTap :(){
                   context.read<PasswordTamseeBlocCubit>().startTimer(reset: false);
@@ -41,7 +41,7 @@ class TimerStopped extends StatelessWidget {
               ),
               SizedBox(width: 10.w),
               GestureDetector(
-                onTap: () {
+                onTap:(){
                   context.read<PasswordTamseeBlocCubit>().stopTimer();
                 },
                 child: Container(

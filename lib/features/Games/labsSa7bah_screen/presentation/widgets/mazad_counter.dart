@@ -5,18 +5,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/mazad_buttons.dart';
 
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/utils/colors.dart';
+import '../../../../../core/utils/styles.dart';
 
 class MazadCounter extends StatelessWidget {
   const MazadCounter({super.key});
+
   @override
-  Widget build(BuildContext context){
-     int seconds = context.read<LabsBlocCubit>().second;
-     final int team1 = context.watch<LabsBlocCubit>().team1Mazad;
+  Widget build(BuildContext context) {
+    int seconds = context.read<LabsBlocCubit>().second;
+    final int team1 = context.watch<LabsBlocCubit>().team1Mazad;
     final int team2 = context.watch<LabsBlocCubit>().team2Mazad;
     return Row(
-      children:[
+      children: [
         Column(
           children: [
             Container(
@@ -24,11 +25,12 @@ class MazadCounter extends StatelessWidget {
               height: 60,
               decoration: BoxDecoration(
                   color: Colors.white60,
-                  borderRadius: BorderRadius.circular(20)
-              ),
-              child: Center(child: Text("$team2",style: TextStyle(
-                  fontSize: 20
-              ),)),
+                  borderRadius: BorderRadius.circular(20)),
+              child: Center(
+                  child: Text(
+                "$team2",
+                style: TextStyle(fontSize: 20),
+              )),
             ),
             MazadButtons(
               team: "B",
@@ -36,18 +38,40 @@ class MazadCounter extends StatelessWidget {
           ],
         ),
         Spacer(),
-        Container(
-          width: 100.w,
-          height: 50.w,
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
-              color: ColorsManager.black
-          ),
-          child:Center(child:Text("$seconds",style: GoogleFonts.inter(
-            fontSize : 30,
-            color : Colors.white
-          ),))
-              ,
+        Column(
+          children: [
+            Container(
+                width: 100.w,
+                height: 50.w,
+                decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(20)),
+                    color: ColorsManager.black),
+                child: Center(
+                    child: Text(
+                  "$seconds",
+                  style: GoogleFonts.inter(fontSize: 30, color: Colors.white),
+                ))),
+            SizedBox(
+              height: 10.h,
+            ),
+            InkWell(
+              onTap: context.read<LabsBlocCubit>().resetTimer,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: ColorsManager.Primary,
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                width: 70.w,
+                height: 45.h,
+                child: Center(
+                    child: Text(
+                  "هعيد",
+                  style: Styles.homeStyle,
+                )),
+              ),
+            )
+          ],
         ),
         Spacer(),
         Column(
@@ -57,11 +81,12 @@ class MazadCounter extends StatelessWidget {
               height: 60,
               decoration: BoxDecoration(
                   color: Colors.white60,
-                  borderRadius: BorderRadius.circular(20)
-              ),
-              child: Center(child: Text("$team1" ,style: TextStyle(
-                fontSize: 20
-              ),)),
+                  borderRadius: BorderRadius.circular(20)),
+              child: Center(
+                  child: Text(
+                "$team1",
+                style: TextStyle(fontSize: 20),
+              )),
             ),
             MazadButtons(
               team: "A",

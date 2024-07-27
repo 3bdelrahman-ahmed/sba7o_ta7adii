@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
 
-import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/utils/colors.dart';
+import '../../../../../core/utils/styles.dart';
 
 class PlayerClueButton extends StatelessWidget {
   const PlayerClueButton({super.key});
