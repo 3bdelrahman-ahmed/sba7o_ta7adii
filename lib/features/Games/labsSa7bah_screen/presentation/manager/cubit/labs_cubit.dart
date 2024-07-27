@@ -90,6 +90,8 @@ class LabsBlocCubit extends Cubit<LabsBlocStates> {
   Timer? timer;
   void resetTimer() {
     second = maxSeconds;
+    timer?.cancel();
+    emit(TimerCompletedState());
     print(state);
   }
 

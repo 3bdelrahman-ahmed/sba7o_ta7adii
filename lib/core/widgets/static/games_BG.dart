@@ -1,17 +1,17 @@
 
+import 'package:spa7o_ta7adii/core/utils/app_images.dart';
+
 class GamesBackGrounds {
   static List <String> gamesBG=
   [
-    "assets/acting.jpeg",
-    "assets/playershadow.jpg",
-    "assets/friend.jpeg",
-    "assets/risk.jpeg",
-    "assets/bank.jpeg",
-    "assets/lock.jpeg",
-    "assets/speed.jpeg",
-    "assets/who.jpeg",
-    "assets/whoisPic.jpg",
-    "assets/arza3.jpeg",
-    "assets/challe.jpg"
+    AppImages.acting,
+    AppImages.meenAna,
+    AppImages.labs,
+    AppImages.risk,
+    AppImages.pass,
+    AppImages.seba2,
+    AppImages.arosty,
+    AppImages.meenXelsora,
+    AppImages.challenge
   ];
 }

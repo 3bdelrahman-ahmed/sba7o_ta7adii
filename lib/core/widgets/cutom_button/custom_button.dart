@@ -12,7 +12,7 @@ import 'package:spa7o_ta7adii/core/service/models/riskDm.dart';
 import 'package:spa7o_ta7adii/core/service/models/seba2Dm.dart';
 import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/custom_toast.dart';
 
-import '../../theming/styles.dart';
+import '../../utils/styles.dart';
 
 class CustomButton extends StatefulWidget {
   final String? downloadUrl;

@@ -1,7 +1,7 @@
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:list_wheel_scroll_view_nls/list_wheel_scroll_view_nls.dart';
 import 'package:spa7o_ta7adii/core/widgets/home_screen_widgets/game_card_widget.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/et7da_screens_list.dart';

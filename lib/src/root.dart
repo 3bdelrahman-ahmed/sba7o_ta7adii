@@ -18,8 +18,8 @@ import 'package:spa7o_ta7adii/features/Games/passwordchallenge_screen/presentati
 import 'package:spa7o_ta7adii/features/Games/risk_screen/presentation/pages/risk_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/seba2_screen/presentation/pages/seba2_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/tamsel_screen/presentation/pages/tamseel_screen.dart';
-import 'package:spa7o_ta7adii/features/on_boarding_screen/presentaion/onboarding_screen.dart';
 import 'package:spa7o_ta7adii/features/home_screen/presentaion/home_screen.dart';
+import 'package:spa7o_ta7adii/features/splash_screen/presentaion/splash_screen.dart';
 
 import '../features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
 
@@ -48,7 +48,7 @@ class RootApp extends StatelessWidget {
             home: child,
             initialRoute: Routes.onBoarding,
             routes: {
-              Routes.onBoarding: (context) => OnBoardingScreen(),
+              Routes.onBoarding: (context) => SplashScreen(),
               Routes.homeScreen: (context) => HomeScreen(),
               Routes.TamseelScreen: (context) => TamseelScreen(),
               Routes.Erza3Screen: (context) => Erza3Screen(),

@@ -2,8 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/3rosti.dart';
 import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/acting.dart';
-import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/bank.dart';
-import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/erza3_sa7.dart';
+
 import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/laps_s7pak.dart';
 import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/meen_ana.dart';
 import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/meen_x_sora.dart';
@@ -18,12 +17,10 @@ class AudinceChallenge {
     MeenAna(),
     LapsSa7pak(),
     Risk(),
-    BankSendQuetions(),
     Password(),
     SpaqSor3a(),
      Arosty(),
     MeenXSora(),
-    Erza3Sa7(),
   ];
 
 }

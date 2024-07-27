@@ -40,7 +40,14 @@ class PasswordTamseeBlocCubit extends Cubit<PasswordTamseelBlocState>
     else {
       team2++;
     }
-    emit(CounterIncreamentState());
+    if(second == 30) {
+      stopTimer();
+      emit(TimerCompletedState());
+    }
+    else {
+      stopTimer(reset: false);
+      emit(TimerPausedState());
+    }
   }
   void teamsDecreament(String team){
     if(team == 'A'){
@@ -51,8 +58,14 @@ class PasswordTamseeBlocCubit extends Cubit<PasswordTamseelBlocState>
       {if(team2 > 0)
       team2--;
   }
-    emit(CounterDecreamentState());
-  }
+    if(second == 30) {
+      stopTimer();
+      emit(TimerCompletedState());
+    }
+    else {
+      stopTimer(reset: false);
+      emit(TimerPausedState());
+    }}
 
 
  static const int maxSeconds = 30;
@@ -62,23 +75,21 @@ class PasswordTamseeBlocCubit extends Cubit<PasswordTamseelBlocState>
     second = maxSeconds;
     print(state);
   }
-
   void stopTimer({bool reset = true}) {
     if (reset) {
       resetTimer();
       emit(TimerCompletedState());
-    } else {
+    } else{
       emit(TimerPausedState());
     }
     print(state);
     timer?.cancel();
   }
-
   void startTimer({bool reset = true}) {
     if (reset) resetTimer();
     timer?.cancel(); // Cancel any existing timer before starting a new one
     timer = Timer.periodic(Duration(seconds: 1), (_) {
-      if (second > 0) {
+      if (second > 0){
         emit(TimerRunningState());
         print(second);
         second--;

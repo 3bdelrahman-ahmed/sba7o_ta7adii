@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:o3d/o3d.dart';
+import 'package:spa7o_ta7adii/core/utils/app_images.dart';
 import 'dart:ui' as ui;
 
 import 'package:spa7o_ta7adii/core/widgets/home_screen_widgets/game_card_widget.dart';
@@ -24,7 +25,7 @@ class HomeScreen extends StatelessWidget{
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Image.asset(
-          'assets/staduim.jpeg',
+          AppImages.backGround,
           fit: BoxFit.fill,
         ),
       ),
@@ -43,21 +44,20 @@ Center(
   child: ImageFiltered(
     imageFilter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
     child: Image.asset(
-      'assets/noso7y.png',
+      AppImages.noso7y,
       scale: 7.5,
     ),
   ),
 ),
-   
-   GridView.builder
+      GridView.builder
    (
     itemCount: GamesNames.gameNames.length,
-    gridDelegate: 
+    gridDelegate:
    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
     itemBuilder: (context,  index){
       return GestureDetector(
         onTap: (){
-        Navigator.push(context, 
+        Navigator.push(context,
         MaterialPageRoute(builder: (context)=>InstructionsScreen(index: index))
         );
         },

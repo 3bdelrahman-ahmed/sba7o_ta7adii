@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../theming/styles.dart';
+import '../../utils/styles.dart';
 
 class ChangeWidget extends StatelessWidget {
   final VoidCallback onChanged;

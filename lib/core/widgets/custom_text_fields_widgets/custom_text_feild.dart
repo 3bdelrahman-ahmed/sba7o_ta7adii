@@ -1,7 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/utils/colors.dart';
+import 'package:spa7o_ta7adii/core/utils/styles.dart';
 
 class InputField extends StatelessWidget {
   final TextEditingController? controller;
@@ -42,7 +42,6 @@ class InputField extends StatelessWidget {
       children: [
         const SizedBox(height: 3,),
         TextFormField(
-
           decoration: InputDecoration(
                         isDense: true,
                         contentPadding: contentPadding?? const EdgeInsets.symmetric(horizontal: 20,vertical: 15),
