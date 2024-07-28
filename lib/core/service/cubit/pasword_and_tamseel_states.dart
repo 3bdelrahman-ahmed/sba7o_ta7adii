@@ -1,20 +1,20 @@
-abstract class PasswordTamseelBlocState{}
+abstract class PasswordAndTamseelStates{}
 
-class InitialState extends PasswordTamseelBlocState{}
+class InitialState extends PasswordAndTamseelStates{}
 
-class LoadingState extends PasswordTamseelBlocState{}
+class LoadingState extends PasswordAndTamseelStates{}
 
-class CounterIncreamentState extends PasswordTamseelBlocState{}
+class CounterIncreamentState extends PasswordAndTamseelStates{}
 
-class TimerRunningState extends PasswordTamseelBlocState{}
+class TimerRunningState extends PasswordAndTamseelStates{}
 
-class TimerPausedState extends PasswordTamseelBlocState{}
+class TimerPausedState extends PasswordAndTamseelStates{}
 
-class TimerCompletedState extends PasswordTamseelBlocState{}
+class TimerCompletedState extends PasswordAndTamseelStates{}
 
-class CounterDecreamentState extends PasswordTamseelBlocState{}
+class CounterDecreamentState extends PasswordAndTamseelStates{}
 
-class SuccessGetPlayer extends PasswordTamseelBlocState{}
+class SuccessGetPlayer extends PasswordAndTamseelStates{}
 
-class FailedGetPlayer extends PasswordTamseelBlocState{}
+class FailedGetPlayer extends PasswordAndTamseelStates{}
 

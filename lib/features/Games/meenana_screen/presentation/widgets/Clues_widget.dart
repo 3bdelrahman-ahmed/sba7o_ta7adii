@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
 
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class CluesWidget extends StatelessWidget {
   const CluesWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    int index = context.read<MeenAnaBlocCubit>().index;
+    int index = context.read<MeenAnaCubit>().index;
     return Container(
         width: MediaQuery.sizeOf(context).width,
         height: 170.h,
@@ -30,8 +30,8 @@ class CluesWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Center(
               child: Text(
-               context.read<MeenAnaBlocCubit>().Clues[index] ?? "",
-                style: Styles.CluesStyle.copyWith(
+               context.read<MeenAnaCubit>().Clues[index] ?? "",
+                style: TextStyles.CluesStyle.copyWith(
                   fontSize: 22
                 ),
                 textDirection: TextDirection.rtl,

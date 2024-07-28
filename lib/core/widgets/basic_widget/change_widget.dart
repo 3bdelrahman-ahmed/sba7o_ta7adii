@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../theming/styles.dart';
+import '../../theming/text_styles.dart';
 
 class ChangeWidget extends StatelessWidget {
   final VoidCallback onChanged;
@@ -8,24 +9,14 @@ class ChangeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Column(
-            children: [
-              IconButton(
-                  onPressed: onChanged,
-                  icon:const Icon(
-                    Icons.change_circle,
-                    color: Colors.red,
-                    size: 40,
-                  )),
-              Text(
-                "تغيير",
-                style: Styles.instructionStyle
-                    .copyWith(fontSize: 20),
-              )
-            ],
-          )
-        ]);  }
+    return Align(
+      alignment: Alignment.topRight,
+      child: IconButton(
+          onPressed: onChanged,
+          icon: Icon(
+            Icons.change_circle,
+            color: Colors.red,
+            size: 40.w,
+          )),
+    );  }
 }

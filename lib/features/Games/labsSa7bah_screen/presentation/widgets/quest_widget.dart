@@ -4,14 +4,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_cubit.dart';
 
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class QuestionWidget extends StatelessWidget {
   const QuestionWidget({super.key});
 
   @override
   Widget build(BuildContext context){
-    String? question = context.watch<LabsBlocCubit>().question;
+    String? question = context.watch<LabsCubit>().question;
     return Container(
         width: MediaQuery.sizeOf(context).width,
         height: 80.h,
@@ -29,7 +29,7 @@ class QuestionWidget extends StatelessWidget {
             child: Center(
               child: Text(
                 question ?? "Error",
-                style: Styles.CluesStyle.copyWith(fontSize: 22),
+                style: TextStyles.CluesStyle.copyWith(fontSize: 22),
                 textDirection: TextDirection.rtl,
               ),
             ),

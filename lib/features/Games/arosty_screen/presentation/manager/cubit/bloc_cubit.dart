@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/manager/cubit/bloc_states.dart';
 
-class ArostyBlocCubit extends Cubit<ArostyBlocState> {
-  ArostyBlocCubit() : super (InitialState()){}
+class ArostyCubit extends Cubit<ArostyBlocState> {
+  ArostyCubit() : super (InitialState()){}
   int team1=0;
   int team2=0;
   int counter=0;

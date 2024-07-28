@@ -117,7 +117,7 @@ static Future<QuerySnapshot<MeenAnaDm>> getMeenAna() async{
 
   documentIds.shuffle(random);
 
-  List<String> shuffledIds = documentIds.sublist(0, 1);
+  List<String> shuffledIds = documentIds.sublist(0,1);
 
   QuerySnapshot<MeenAnaDm> querySnapshot = await collectionRef
       .where(FieldPath.documentId, whereIn: shuffledIds)

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
 
 class SquadPhoto extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    String? imageUrl = context.read<MeenXelsoraBlocCubit>().ImageUrl;
+    String? imageUrl = context.read<MeenXelsoraCubit>().ImageUrl;
 
     return Center(
       child: Container(
@@ -26,7 +26,7 @@ class SquadPhoto extends StatelessWidget {
               errorWidget: (context, url, error) => Center(
                 child: Text(
                   'Something went Wrong',
-                  style: Styles.GamesListStyle.copyWith(
+                  style: TextStyles.GamesListStyle.copyWith(
                     color: Colors.red
                   ),
                 ),

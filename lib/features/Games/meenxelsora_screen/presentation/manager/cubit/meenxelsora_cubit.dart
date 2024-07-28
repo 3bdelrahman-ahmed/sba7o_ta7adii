@@ -4,9 +4,9 @@ import 'package:spa7o_ta7adii/core/service/firebase_manager.dart';
 import 'package:spa7o_ta7adii/core/service/models/meenSoraDm.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_bloc_states.dart';
 
-class MeenXelsoraBlocCubit extends Cubit<MeenXelsoraBlocStates>{
+class MeenXelsoraCubit extends Cubit<MeenXelsoraBlocStates>{
 
-  MeenXelsoraBlocCubit() : super(InitialState()){
+  MeenXelsoraCubit() : super(InitialState()){
     getSquad();
   }
 

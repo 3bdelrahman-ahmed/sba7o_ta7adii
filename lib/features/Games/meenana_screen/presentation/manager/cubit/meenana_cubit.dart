@@ -5,8 +5,8 @@ import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager
 
 import '../../../../../../core/service/firebase_manager.dart';
 
-class MeenAnaBlocCubit extends Cubit<MeenAnaBlocStates> {
-  MeenAnaBlocCubit() : super(InitialState()){
+class MeenAnaCubit extends Cubit<MeenAnaBlocStates> {
+  MeenAnaCubit() : super(InitialState()){
     getMeenAnaPlayer();
   }
 

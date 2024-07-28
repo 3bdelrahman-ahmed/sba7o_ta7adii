@@ -10,7 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart';
 import 'package:path/path.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/pasword_and_tamseel_states.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.dart';
@@ -31,8 +31,8 @@ class PasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: LayoutWidget(
-        buttonWidget:  ChangeWidget(onChanged:()=> context.read<PasswordTamseeBlocCubit>().getPlayer()),
-        widget:   BlocConsumer<PasswordTamseeBlocCubit,PasswordTamseelBlocState>(
+        buttonWidget:  ChangeWidget(onChanged:()=> context.read<PasswordAndTamseelCubit>().getPlayer()),
+        widget:   BlocConsumer<PasswordAndTamseelCubit,PasswordAndTamseelStates>(
             builder: (context, state){
              return Center(
                   child: Column(
@@ -57,28 +57,28 @@ class PasswordScreen extends StatelessWidget {
                      BuildTimerWidget(),
                       if(state is TimerRunningState)
                         TimerIsRunning(second:
-                        context.read<PasswordTamseeBlocCubit>().second,
-                            maxSeconds: PasswordTamseeBlocCubit.maxSeconds)
+                        context.read<PasswordAndTamseelCubit>().second,
+                            maxSeconds: PasswordAndTamseelCubit.maxSeconds)
                       else if(state is TimerPausedState)
                         TimerStopped(
-                          second: context.read<PasswordTamseeBlocCubit>().second,
-                          maxSeconds: PasswordTamseeBlocCubit.maxSeconds,)
+                          second: context.read<PasswordAndTamseelCubit>().second,
+                          maxSeconds: PasswordAndTamseelCubit.maxSeconds,)
                       else
                         TimerCompleted(
-                            second: context.read<PasswordTamseeBlocCubit>().second,
-                            maxSeconds: PasswordTamseeBlocCubit.maxSeconds),
+                            second: context.read<PasswordAndTamseelCubit>().second,
+                            maxSeconds: PasswordAndTamseelCubit.maxSeconds),
                       SizedBox(
                         height: 25.h,
                       ),
                        Padding(
                           padding: EdgeInsets.symmetric(horizontal: 15),
                           child: CounterTeamWidget(
-                            team1: context.read<PasswordTamseeBlocCubit>().team1,
-                          team2: context.read<PasswordTamseeBlocCubit>().team2,
-                            onDecteamA: ()=>context.read<PasswordTamseeBlocCubit>().teamsDecreament('A'),
-                            onIncteamA: ()=>context.read<PasswordTamseeBlocCubit>().teamsIncreament('A'),
-                            onDecteamB: ()=>context.read<PasswordTamseeBlocCubit>().teamsDecreament('B'),
-                            onIncteamB: ()=>context.read<PasswordTamseeBlocCubit>().teamsIncreament('B'),
+                            team1: context.read<PasswordAndTamseelCubit>().team1,
+                          team2: context.read<PasswordAndTamseelCubit>().team2,
+                            onDecteamA: ()=>context.read<PasswordAndTamseelCubit>().teamsDecreament('A'),
+                            onIncteamA: ()=>context.read<PasswordAndTamseelCubit>().teamsIncreament('A'),
+                            onDecteamB: ()=>context.read<PasswordAndTamseelCubit>().teamsDecreament('B'),
+                            onIncteamB: ()=>context.read<PasswordAndTamseelCubit>().teamsIncreament('B'),
                           )
                       )
                     ],

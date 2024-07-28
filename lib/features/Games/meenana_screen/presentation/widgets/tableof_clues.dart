@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
 
 class TableOfClues extends StatelessWidget {
   const TableOfClues({super.key});
   @override
   Widget build(BuildContext context) {
-    final tableofclues = context.read<MeenAnaBlocCubit>().TableofClues;
+    final tableofclues = context.read<MeenAnaCubit>().TableofClues;
     return  Stack(
       textDirection: TextDirection.rtl,
       children: [
@@ -27,7 +27,7 @@ class TableOfClues extends StatelessWidget {
                     children: [
                       Text(tableofclues[index]??"",
                         textDirection: TextDirection.rtl,
-                      style: Styles.GamesListStyle.copyWith(
+                      style: TextStyles.GamesListStyle.copyWith(
                         color: Colors.black,
                         fontSize: 18
                       ),),

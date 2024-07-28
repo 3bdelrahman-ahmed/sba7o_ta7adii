@@ -4,20 +4,20 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_cubit.dart';
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 class StartGame extends StatelessWidget {
   const StartGame({super.key});
 
   @override
   Widget build(BuildContext context){
-    int team2 = context.read<LabsBlocCubit>().team2Mazad;
-    int team1 = context.read<LabsBlocCubit>().team1Mazad;
+    int team2 = context.read<LabsCubit>().team2Mazad;
+    int team1 = context.read<LabsCubit>().team1Mazad;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         GestureDetector(
           onTap: () { if(team2>0)
-            context.read<LabsBlocCubit>().startTimer(
+            context.read<LabsCubit>().startTimer(
               teamNum: 2
             );
             },
@@ -28,12 +28,12 @@ class StartGame extends StatelessWidget {
                 color: ColorsManager.Primary,
                 borderRadius: BorderRadius.circular(20)
             ),
-            child: Center(child: Text("هروح",style: Styles.instructionStyle,)),
+            child: Center(child: Text("هروح",style: TextStyles.instructionStyle,)),
           ),
         ),
         GestureDetector(
           onTap: () {
-            if (team1 > 0) context.read<LabsBlocCubit>().startTimer(
+            if (team1 > 0) context.read<LabsCubit>().startTimer(
               teamNum: 1
             );},
           child: Container(
@@ -43,7 +43,7 @@ class StartGame extends StatelessWidget {
                 color: ColorsManager.Primary,
                 borderRadius: BorderRadius.circular(20)
             ),
-            child: Center(child:Text("هروح",style: Styles.instructionStyle,)),
+            child: Center(child:Text("هروح",style: TextStyles.instructionStyle,)),
           ),
         ),
       ],

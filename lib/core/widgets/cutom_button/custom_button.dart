@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/service/cubit/validation_bloc_cubit.dart';
+import 'package:spa7o_ta7adii/core/service/cubit/validation_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/firebase_manager.dart';
 import 'package:spa7o_ta7adii/core/service/models/actingDm.dart';
 import 'package:spa7o_ta7adii/core/service/models/bankDm.dart';
@@ -12,7 +12,7 @@ import 'package:spa7o_ta7adii/core/service/models/riskDm.dart';
 import 'package:spa7o_ta7adii/core/service/models/seba2Dm.dart';
 import 'package:spa7o_ta7adii/core/widgets/send_qeutions_widgets/custom_toast.dart';
 
-import '../../theming/styles.dart';
+import '../../theming/text_styles.dart';
 
 class CustomButton extends StatefulWidget {
   final String? downloadUrl;
@@ -52,7 +52,7 @@ class _CustomButtonState extends State<CustomButton> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<ValidationBlocCubit, ValidationBlocState>(
+    return BlocConsumer<ValidationCubit, ValidationBlocState>(
       listener: (context, state) {
         if (state is ValidationBlocSucess) {
         showToast(context,Icon(Icons.done),'تم يا حبيب اخوك',Colors.greenAccent);
@@ -68,13 +68,13 @@ class _CustomButtonState extends State<CustomButton> {
           onTap: () {
             if (widget.index == 0) {
               if(widget.firstController!.text.isEmpty){
-            context.read<ValidationBlocCubit>().validationState(false); 
+            context.read<ValidationCubit>().validationState(false);
             print('faill');
               }
               else{
               ActingDm actingDm = ActingDm(name: widget.firstController!.text);
               FirebaseManager.addActingQuest(actingDm);
-           context.read<ValidationBlocCubit>().validationState(true); 
+           context.read<ValidationCubit>().validationState(true);
                 print('suxxxxxxxxxxxx');
             } 
             }
@@ -85,7 +85,7 @@ class _CustomButtonState extends State<CustomButton> {
                   widget.fourthController!.text.isEmpty ||
                   widget.fifthController!.text.isEmpty ||
                   widget.sixthController!.text.isEmpty) {
-                context.read<ValidationBlocCubit>().validationState(false);
+                context.read<ValidationCubit>().validationState(false);
                 print('fail');
               } 
               else {
@@ -100,11 +100,11 @@ class _CustomButtonState extends State<CustomButton> {
                 );
 
                 FirebaseManager.addMeenAnaQuest(meenAnaDm);
-                context.read<ValidationBlocCubit>().validationState(true);
+                context.read<ValidationCubit>().validationState(true);
               }
             } else if (widget.index == 2) {
               if(widget.firstController!.text.isEmpty || widget.secondController!.text.isEmpty){
-              context.read<ValidationBlocCubit>().validationState(false); 
+              context.read<ValidationCubit>().validationState(false);
               }
               else{
               LabsDm labsDm = LabsDm(
@@ -112,7 +112,7 @@ class _CustomButtonState extends State<CustomButton> {
                 answers: widget.secondController!.text,
               );
               FirebaseManager.addLabsQuest(labsDm);
-            context.read<ValidationBlocCubit>().validationState(true); 
+            context.read<ValidationCubit>().validationState(true);
               }
             } else if (widget.index == 3) {
               if(
@@ -127,7 +127,7 @@ class _CustomButtonState extends State<CustomButton> {
                    widget.ninthController!.text.isEmpty
               )
               {
-                context.read<ValidationBlocCubit>().validationState(false); 
+                context.read<ValidationCubit>().validationState(false);
               }
               else{
   
@@ -143,11 +143,11 @@ class _CustomButtonState extends State<CustomButton> {
                 fourtAns: widget.ninthController!.text,
               );
               FirebaseManager.addRiskQuest(riskDm);
-           context.read<ValidationBlocCubit>().validationState(true); 
+           context.read<ValidationCubit>().validationState(true);
               }
             } else if (widget.index == 4) {
               if(widget.firstController!.text.isEmpty||widget.secondController!.text.isEmpty){
-              context.read<ValidationBlocCubit>().validationState(false); 
+              context.read<ValidationCubit>().validationState(false);
               }
               else{
               BankDm bankDm = BankDm(
@@ -155,11 +155,11 @@ class _CustomButtonState extends State<CustomButton> {
                 answer: widget.secondController!.text,
               );
               FirebaseManager.addBankQuest(bankDm);
-              context.read<ValidationBlocCubit>().validationState(true); 
+              context.read<ValidationCubit>().validationState(true);
               }
             } else if (widget.index == 5) {
               if(widget.firstController!.text.isEmpty||widget.secondController!.text.isEmpty){
-              context.read<ValidationBlocCubit>().validationState(false); 
+              context.read<ValidationCubit>().validationState(false);
               }
               else{
               Seba2Dm seba2Dm = Seba2Dm(
@@ -167,11 +167,11 @@ class _CustomButtonState extends State<CustomButton> {
                 answer: widget.secondController!.text,
               );
               FirebaseManager.addSeba2Quest(seba2Dm);
-             context.read<ValidationBlocCubit>().validationState(true); 
+             context.read<ValidationCubit>().validationState(true);
               }
             } else if (widget.index == 6) {
               if(widget.downloadUrl==null||widget.firstController!.text.isEmpty||widget.secondController!.text.isEmpty){
-                    context.read<ValidationBlocCubit>().validationState(false); 
+                    context.read<ValidationCubit>().validationState(false);
               }
               else{
               MeenSoraDm meenSoraDm = MeenSoraDm(
@@ -180,7 +180,7 @@ class _CustomButtonState extends State<CustomButton> {
                 players: widget.secondController!.text,
               );
               FirebaseManager.addMeenSoraQuest(meenSoraDm);
-              context.read<ValidationBlocCubit>().validationState(true);
+              context.read<ValidationCubit>().validationState(true);
               widget.downloadUrl??''; 
               }
             }
@@ -208,7 +208,7 @@ class _CustomButtonState extends State<CustomButton> {
             alignment: Alignment.center,
             child: Text(
               'Submit',
-              style: Styles.instructionStyle,
+              style: TextStyles.instructionStyle,
             ),
           ),
         );

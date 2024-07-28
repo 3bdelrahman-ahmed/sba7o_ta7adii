@@ -6,15 +6,15 @@ import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/mana
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/mazad_buttons.dart';
 
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class MazadCounter extends StatelessWidget {
   const MazadCounter({super.key});
   @override
   Widget build(BuildContext context){
-     int seconds = context.read<LabsBlocCubit>().second;
-     final int team1 = context.watch<LabsBlocCubit>().team1Mazad;
-    final int team2 = context.watch<LabsBlocCubit>().team2Mazad;
+     int seconds = context.read<LabsCubit>().second;
+     final int team1 = context.watch<LabsCubit>().team1Mazad;
+    final int team2 = context.watch<LabsCubit>().team2Mazad;
     return Row(
       children:[
         Column(

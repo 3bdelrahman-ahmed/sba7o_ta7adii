@@ -7,9 +7,9 @@ import 'package:spa7o_ta7adii/core/service/firebase_manager.dart';
 import 'package:spa7o_ta7adii/core/service/models/actingDm.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/pasword_and_tamseel_states.dart';
 
-class PasswordTamseeBlocCubit extends Cubit<PasswordTamseelBlocState>
+  class PasswordAndTamseelCubit extends Cubit<PasswordAndTamseelStates>
 {
-  PasswordTamseeBlocCubit() : super(InitialState()){
+  PasswordAndTamseelCubit() : super(InitialState()){
     getPlayer();
   }
   int team1=0;
@@ -40,7 +40,14 @@ class PasswordTamseeBlocCubit extends Cubit<PasswordTamseelBlocState>
     else {
       team2++;
     }
-    emit(CounterIncreamentState());
+    if(second == 30) {
+      stopTimer();
+      emit(TimerCompletedState());
+    }
+    else {
+      stopTimer(reset: false);
+      emit(TimerPausedState());
+    }
   }
   void teamsDecreament(String team){
     if(team == 'A'){
@@ -51,7 +58,14 @@ class PasswordTamseeBlocCubit extends Cubit<PasswordTamseelBlocState>
       {if(team2 > 0)
       team2--;
   }
-    emit(CounterDecreamentState());
+    if(second == 30) {
+      stopTimer();
+      emit(TimerCompletedState());
+    }
+    else {
+      stopTimer(reset: false);
+      emit(TimerPausedState());
+    }
   }
 
 

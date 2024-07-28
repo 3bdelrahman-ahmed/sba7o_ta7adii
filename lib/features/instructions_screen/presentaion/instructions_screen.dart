@@ -6,10 +6,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_instr.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/screens_list.dart';
+
+import '../../../config/app_routes.dart';
+import '../../../core/helper/gameSelector.dart';
 
 
 class InstructionsScreen extends StatefulWidget {
@@ -69,7 +72,7 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
               child: Column(
                 children: [
                   Center(
-                    child: Text(GamesNames.gameNames[widget.index],style: Styles.homeStyle.copyWith(
+                    child: Text(GamesNames.gameNames[widget.index],style: TextStyles.homeStyle.copyWith(
                       fontSize: 26
                     ),),
                   ),
@@ -83,7 +86,7 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
                       child: AnimatedTextKit(
                         animatedTexts: [
                           TyperAnimatedText(
-                            InstructionsList.instr[widget.index],textStyle: Styles.instructionStyle,
+                            InstructionsList.instr[widget.index],textStyle: TextStyles.instructionStyle,
                             textAlign: TextAlign.end,
                           speed: Duration(milliseconds: 15))
                           ,
@@ -101,7 +104,7 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
                       duration: Duration(seconds: 1),
                       child: GestureDetector(
                         onTap: () {
-                         Navigator.push(context, MaterialPageRoute(builder: (context) => ScreensList.screens[widget.index]));
+                          gameSelector(context: context,index: widget.index);
                         },
                         child: Container(
                           decoration: BoxDecoration(
@@ -112,7 +115,7 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
                           height: 50.h,
                           child: Center(
                               child: Text("ابدء اللعب",
-                          style: Styles.homeStyle,)),
+                          style: TextStyles.homeStyle,)),
                         ),
                       ),
                     ),

@@ -2,7 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 
 class GameCard extends StatefulWidget {
   final String gameTitle;
@@ -73,7 +73,7 @@ class _GameCardState extends State<GameCard> with SingleTickerProviderStateMixin
                 child: Text(
                     widget.gameTitle,
                   textAlign: TextAlign.center,
-                  style: Styles.homeStyle,
+                  style: TextStyles.homeStyle,
                 ),
               ),
             ),

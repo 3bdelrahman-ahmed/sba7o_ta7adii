@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/arrows_widgets.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/change_widget.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.dart';
@@ -27,8 +27,8 @@ class MeenAnaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: LayoutWidget(
-      buttonWidget: ChangeWidget(onChanged:() => context.read<MeenAnaBlocCubit>().getMeenAnaPlayer()),
-      widget: BlocConsumer<MeenAnaBlocCubit, MeenAnaBlocStates>(
+      buttonWidget: ChangeWidget(onChanged:() => context.read<MeenAnaCubit>().getMeenAnaPlayer()),
+      widget: BlocConsumer<MeenAnaCubit, MeenAnaBlocStates>(
         builder: (context, state) {
           if(state is LoadingState)
             {
@@ -45,11 +45,11 @@ class MeenAnaScreen extends StatelessWidget {
                 height: 10.h,
               ),
             GestureDetector(
-              onTap:() => context.read<MeenAnaBlocCubit>().addingclue(),
+              onTap:() => context.read<MeenAnaCubit>().addingclue(),
               child: Row(
                 children: [
                   Icon(Icons.arrow_back_sharp,color: Colors.white,size: 40,),
-                 Text("الكلو التالي",style: Styles.homeStyle,)],
+                 Text("الكلو التالي",style: TextStyles.homeStyle,)],
               ),
             ),
               PlayerClueButton(),

@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 
 import '../../theming/colors.dart';
-import '../../theming/styles.dart';
+import '../../theming/text_styles.dart';
 
 class CounterTeamWidget extends StatelessWidget {
   int team1;
@@ -24,15 +24,15 @@ class CounterTeamWidget extends StatelessWidget {
     required this.onDecteamB
 });
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 300.w,
-      height: 150.h,
+      height: 180.h,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Column(
             children: [
-              Text("الفريق التاني",style: Styles.instructionStyle,),
+              Text("الفريق التاني",style: TextStyles.instructionStyle,),
               SizedBox(height: 3.h,),
               Container(
                 width: 60.w,
@@ -41,7 +41,7 @@ class CounterTeamWidget extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(child: Text("$team2",style: Styles.counterNumberStyle)),
+                child: Center(child: Text("$team2",style: TextStyles.counterNumberStyle)),
               ),
               SizedBox(height: 10.h,),
               Row(
@@ -57,7 +57,7 @@ class CounterTeamWidget extends StatelessWidget {
                       height: 40.h,
                       child: Center(
                           child: Text("-",
-                            style: Styles.homeStyle,)),
+                            style: TextStyles.homeStyle,)),
                     ),
                   ),
                   SizedBox(
@@ -74,7 +74,7 @@ class CounterTeamWidget extends StatelessWidget {
                       height: 40.h,
                       child: Center(
                           child: Text("+",
-                            style: Styles.homeStyle,)),
+                            style: TextStyles.homeStyle,)),
                     ),
                   )
                 ],
@@ -84,7 +84,7 @@ class CounterTeamWidget extends StatelessWidget {
           Spacer(),
           Column(
             children: [
-              Text("الفريق الأول",style: Styles.instructionStyle,),
+              Text("الفريق الأول",style: TextStyles.instructionStyle,),
               SizedBox(height: 3.h,),
               Container(
                 width: 60.w,
@@ -93,7 +93,7 @@ class CounterTeamWidget extends StatelessWidget {
                   color: Colors.black,
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Center(child: Text("$team1",style: Styles.counterNumberStyle)),
+                child: Center(child: Text("$team1",style: TextStyles.counterNumberStyle)),
               ),
               SizedBox(height: 10.h,),
               Row(
@@ -109,7 +109,7 @@ class CounterTeamWidget extends StatelessWidget {
                       height: 40.h,
                       child: Center(
                           child: Text("-",
-                            style: Styles.homeStyle,)),
+                            style: TextStyles.homeStyle,)),
                     ),
                   ),
                   SizedBox(
@@ -126,7 +126,7 @@ class CounterTeamWidget extends StatelessWidget {
                       height: 40.h,
                       child: Center(
                           child: Text("+",
-                            style: Styles.homeStyle,)),
+                            style: TextStyles.homeStyle,)),
                     ),
                   )
       

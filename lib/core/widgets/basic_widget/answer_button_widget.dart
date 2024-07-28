@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
 
 import '../../theming/colors.dart';
-import '../../theming/styles.dart';
+import '../../theming/text_styles.dart';
 
 class ShowAnswersButton extends StatelessWidget {
   const ShowAnswersButton({super.key,
@@ -26,7 +26,7 @@ class ShowAnswersButton extends StatelessWidget {
         height: 40.h,
         child: Center(
             child: Text(isVisible ?"اخفاء الاجابات" : "اظهار الاجابات",
-              style: Styles.instructionStyle.copyWith(
+              style: TextStyles.instructionStyle.copyWith(
                   fontSize: 18
               ),)),
       ),

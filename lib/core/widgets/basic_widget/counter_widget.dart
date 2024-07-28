@@ -6,7 +6,7 @@ import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/manager/
 
 import '../../service/cubit/password_and_tamseel_cubit.dart';
 import '../../theming/colors.dart';
-import '../../theming/styles.dart';
+import '../../theming/text_styles.dart';
 
 class CounterWidget extends StatelessWidget {
    CounterWidget({required this.counter});
@@ -17,7 +17,7 @@ class CounterWidget extends StatelessWidget {
     return
       Column(
         children: [
-          Text("المزاد",style: Styles.instructionStyle.copyWith(
+          Text("المزاد",style: TextStyles.instructionStyle.copyWith(
             fontSize: 30
           ),),
           Container(
@@ -38,7 +38,7 @@ class CounterWidget extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap:(){
-                  context.read<ArostyBlocCubit>().counterState("");
+                  context.read<ArostyCubit>().counterState("");
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -49,7 +49,7 @@ class CounterWidget extends StatelessWidget {
                   height: 45.h,
                   child: Center(
                       child: Text("-",
-                        style: Styles.homeStyle,)),
+                        style: TextStyles.homeStyle,)),
                 ),
               ),
               SizedBox(
@@ -57,7 +57,7 @@ class CounterWidget extends StatelessWidget {
               ),
               GestureDetector(
                 onTap:(){
-                  context.read<ArostyBlocCubit>().counterState("Inc");
+                  context.read<ArostyCubit>().counterState("Inc");
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -68,7 +68,7 @@ class CounterWidget extends StatelessWidget {
                   height: 45.h,
                   child: Center(
                       child: Text("+",
-                        style: Styles.homeStyle,)),
+                        style: TextStyles.homeStyle,)),
                 ),
               )
             ],

@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:o3d/o3d.dart';
+import 'package:spa7o_ta7adii/config/app_routes.dart';
 import 'dart:ui' as ui;
 
 import 'package:spa7o_ta7adii/core/widgets/home_screen_widgets/game_card_widget.dart';
@@ -57,9 +58,9 @@ Center(
     itemBuilder: (context,  index){
       return GestureDetector(
         onTap: (){
-        Navigator.push(context, 
-        MaterialPageRoute(builder: (context)=>InstructionsScreen(index: index))
-        );
+          Navigator.pushNamed(context, AppRouting.instructionScreen,
+          arguments: index
+          );
         },
         child: GameCard(gameTitle: GamesNames.gameNames[index], instructionText: InstructionsList.instr[index],gamePho: GamesBackGrounds.gamesBG[index],height: 100,width: 75,)
         );

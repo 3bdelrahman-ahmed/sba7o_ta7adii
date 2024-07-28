@@ -6,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 import '../../../../../core/service/cubit/password_and_tamseel_cubit.dart';
 
-class TimerCompleted extends StatefulWidget {
+class TimerCompleted extends StatelessWidget {
   TimerCompleted({
     required this.second,
     required this.maxSeconds
@@ -17,11 +17,6 @@ class TimerCompleted extends StatefulWidget {
   int second;
   int maxSeconds;
 
-  @override
-  State<TimerCompleted> createState() => _TimerCompletedState();
-}
-
-class _TimerCompletedState extends State<TimerCompleted> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -32,7 +27,7 @@ class _TimerCompletedState extends State<TimerCompleted> {
         )
         ,GestureDetector(
       onTap:  () {
-        context.read<PasswordTamseeBlocCubit>().startTimer();
+        context.read<PasswordAndTamseelCubit>().startTimer();
       },
       child: Container(
         decoration: BoxDecoration(
@@ -43,7 +38,7 @@ class _TimerCompletedState extends State<TimerCompleted> {
         height: 50.h,
         child: Center(
             child: Text("ابدء العد",
-              style: Styles.homeStyle,)),
+              style: TextStyles.homeStyle,)),
       ),
     )]
     );

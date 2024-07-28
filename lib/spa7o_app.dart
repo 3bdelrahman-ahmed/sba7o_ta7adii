@@ -1,71 +1,52 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/router/routes.dart';
+import 'package:spa7o_ta7adii/config/app_routes.dart';
+import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/validation_cubit.dart';
 import 'package:spa7o_ta7adii/core/service_locator/di.dart';
 import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/manager/cubit/bloc_cubit.dart';
-import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/pages/arosty_screen.dart';
-import 'package:spa7o_ta7adii/features/Games/bank_screen/presentation/pages/bank_screen.dart';
-import 'package:spa7o_ta7adii/features/Games/erza3s7_screen/presentation/pages/erza3_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_cubit.dart';
-import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/pages/labs_screen.dart';
-import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/pages/meenana_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/pages/meenxelsora_screen.dart';
-import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
-import 'package:spa7o_ta7adii/features/Games/passwordchallenge_screen/presentation/pages/passwordchallenge_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/risk_screen/domain/cubit/risk_cubit.dart';
-import 'package:spa7o_ta7adii/features/Games/risk_screen/presentation/pages/risk_screen.dart';
-import 'package:spa7o_ta7adii/features/Games/seba2_screen/presentation/pages/seba2_screen.dart';
-import 'package:spa7o_ta7adii/features/Games/tamsel_screen/presentation/pages/tamseel_screen.dart';
-import 'package:spa7o_ta7adii/features/home_screen/presentaion/home_screen.dart';
-import 'package:spa7o_ta7adii/features/splash_screen/presentaion/splash_screen.dart';
 
-import '../features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
+import 'features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
 
-class RootApp extends StatelessWidget {
-  const RootApp({Key? key}) : super(key: key);
+class Spa7oApp extends StatelessWidget {
+  const Spa7oApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(360,
-          690),
+      designSize: Size(360, 690),
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (_, child) {
         return MultiBlocProvider(
           providers: [
-            BlocProvider(create: (context) => locator<MeenAnaCubit>(),),
-            BlocProvider(create: (context) => locator<LabsCubit>(),),
-            BlocProvider(create: (context) => locator<MeenXelsoraCubit>(),),
-            BlocProvider(create: (context) => locator<ArostyCubit>(),),
+            BlocProvider(
+              create: (context) => locator<MeenAnaCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => locator<LabsCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => locator<MeenXelsoraCubit>(),
+            ),
+            BlocProvider(
+              create: (context) => locator<ArostyCubit>(),
+            ),
             BlocProvider(create: (context) => locator<ValidationCubit>()),
-            BlocProvider(create: (context)=> locator<PasswordAndTamseelCubit>()),
-            BlocProvider(create: (context)=> locator<RiskCubit>())
-
+            BlocProvider(
+                create: (context) => locator<PasswordAndTamseelCubit>()),
+            BlocProvider(create: (context) => locator<RiskCubit>())
           ],
           child: Directionality(
             textDirection: TextDirection.rtl,
             child: MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: child,
-              initialRoute: Routes.onBoarding,
-              routes: {
-                Routes.onBoarding: (context) => SplashScreen(),
-                Routes.homeScreen: (context) => HomeScreen(),
-                Routes.TamseelScreen: (context) => TamseelScreen(),
-                Routes.Erza3Screen: (context) => Erza3Screen(),
-                Routes.MeenXelsoraScreen: (context) => MeenXelsoraScreen(),
-                Routes.ArostyScreen: (context) => ArostyScreen(),
-                Routes.Seba2Screen: (context) => Seba2Screen(),
-                Routes.PasswordScreen: (context) => PasswordScreen(),
-                Routes.BankScreen: (context) => BankScreen(),
-                Routes.RiskScreen: (context) => RiskScreen(),
-                Routes.LabsSa7bkScreen: (context) => LabsSa7bkScreen(),
-                Routes.MeenAnaScreen: (context) => MeenAnaScreen()
-              },
+              onGenerateRoute: AppRouter.onGenerateRoute,
+              initialRoute: AppRouting.splashScreen,
             ),
           ),
         );

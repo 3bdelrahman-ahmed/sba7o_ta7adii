@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class TimerStopped extends StatelessWidget {
   TimerStopped({
@@ -25,7 +25,7 @@ class TimerStopped extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap :(){
-                  context.read<PasswordTamseeBlocCubit>().startTimer(reset: false);
+                  context.read<PasswordAndTamseelCubit>().startTimer(reset: false);
                 },
                 child: Container(
                     decoration: BoxDecoration(
@@ -36,13 +36,13 @@ class TimerStopped extends StatelessWidget {
                     height: 50.h,
                     child: Center(
                       child:
-                      Text("استكمال",style: Styles.homeStyle),
+                      Text("استكمال",style: TextStyles.homeStyle),
                     )),
               ),
               SizedBox(width: 10.w),
               GestureDetector(
                 onTap: () {
-                  context.read<PasswordTamseeBlocCubit>().stopTimer();
+                  context.read<PasswordAndTamseelCubit>().stopTimer();
                 },
                 child: Container(
                   decoration: BoxDecoration(
@@ -53,7 +53,7 @@ class TimerStopped extends StatelessWidget {
                   height: 50.h,
                   child: Center(
                       child: Text("الغاء",
-                        style: Styles.homeStyle,)),
+                        style: TextStyles.homeStyle,)),
                 ),
               ),
             ],

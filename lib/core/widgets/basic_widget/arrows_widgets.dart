@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class ArrowsWidget extends StatelessWidget {
   const ArrowsWidget({super.key});
@@ -18,7 +18,7 @@ class ArrowsWidget extends StatelessWidget {
           children: [
             IconButton(
                 onPressed: (){
-                  context.read<PasswordTamseeBlocCubit>().getPlayer();
+                  context.read<PasswordAndTamseelCubit>().getPlayer();
                 },
                 icon: const Icon(
                   Icons.repeat_on_outlined,
@@ -29,7 +29,7 @@ class ArrowsWidget extends StatelessWidget {
               padding: const EdgeInsets.only(right: 10),
               child: Text(
                 "تغير",
-                style: Styles.instructionStyle
+                style: TextStyles.instructionStyle
                     .copyWith(fontSize: 20),
               ),
             )

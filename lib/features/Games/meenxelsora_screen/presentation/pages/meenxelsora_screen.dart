@@ -28,9 +28,9 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
     return Scaffold(
         body: LayoutWidget(
       buttonWidget: ChangeWidget(
-        onChanged: () => context.read<MeenXelsoraBlocCubit>().getSquad(),
+        onChanged: () => context.read<MeenXelsoraCubit>().getSquad(),
       ),
-      widget: BlocConsumer<MeenXelsoraBlocCubit, MeenXelsoraBlocStates>(
+      widget: BlocConsumer<MeenXelsoraCubit, MeenXelsoraBlocStates>(
         builder: (context, state) {
           if (state is LoadingState) {
             return const Center(
@@ -48,33 +48,33 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
                 ),
                 SquadName(),
                 ShowAnswersButton(
-                  isVisible: context.read<MeenXelsoraBlocCubit>().isVisible,
-                  onChange: ()=>context.read<MeenXelsoraBlocCubit>().changeVisibility(),
+                  isVisible: context.read<MeenXelsoraCubit>().isVisible,
+                  onChange: ()=>context.read<MeenXelsoraCubit>().changeVisibility(),
                 ),
                 SizedBox(
                   height: 10.h,
                 ),
                 ShowAnswers(
-                  isVisible: context.read<MeenXelsoraBlocCubit>().isVisible,
-                  Answers: context.read<MeenXelsoraBlocCubit>().players,
+                  isVisible: context.read<MeenXelsoraCubit>().isVisible,
+                  Answers: context.read<MeenXelsoraCubit>().players,
                 ),
                 SizedBox(
                   height: 10.h,
                 ),
                 CounterTeamWidget(
-                    team1: context.read<MeenXelsoraBlocCubit>().team1,
-                    team2: context.read<MeenXelsoraBlocCubit>().team2,
+                    team1: context.read<MeenXelsoraCubit>().team1,
+                    team2: context.read<MeenXelsoraCubit>().team2,
                     onIncteamA: () => context
-                        .read<MeenXelsoraBlocCubit>()
+                        .read<MeenXelsoraCubit>()
                         .teamsIncreament('A'),
                     onIncteamB: () => context
-                        .read<MeenXelsoraBlocCubit>()
+                        .read<MeenXelsoraCubit>()
                         .teamsIncreament('B'),
                     onDecteamA: () => context
-                        .read<MeenXelsoraBlocCubit>()
+                        .read<MeenXelsoraCubit>()
                         .teamsDecreament('A'),
                     onDecteamB: () => context
-                        .read<MeenXelsoraBlocCubit>()
+                        .read<MeenXelsoraCubit>()
                         .teamsDecreament('B')),
               ],
             );

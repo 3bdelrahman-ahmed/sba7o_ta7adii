@@ -50,15 +50,12 @@ class LayoutWidget extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 20.h,
-          right: 20.h,
-          child: buttonWidget
-        ),
-        SizedBox(
-          height: 35.h,
+            top: 20.h,
+            right: 20.w,
+            child: buttonWidget
         ),
          Positioned(
-          top: 110.h,
+          top: 70.h,
           left: 10.h,
           right: 10.h,
           child:

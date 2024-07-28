@@ -1,10 +1,10 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-part 'validation_bloc_state.dart';
+part 'validation_states.dart';
 
-class ValidationBlocCubit extends Cubit<ValidationBlocState> {
-  ValidationBlocCubit() : super(ValidationBlocInitial());
+class ValidationCubit extends Cubit<ValidationBlocState> {
+  ValidationCubit() : super(ValidationBlocInitial());
 
   void validationState(bool check){
     if(check){

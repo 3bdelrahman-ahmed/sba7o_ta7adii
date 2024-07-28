@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_cubit.dart';
 
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class MazadButtons extends StatelessWidget {
   const MazadButtons({super.key, required this.team});
@@ -18,8 +18,8 @@ class MazadButtons extends StatelessWidget {
       children: [
         GestureDetector(
           onTap: () => team == 'A'
-              ? context.read<LabsBlocCubit>().mazadDecreament(team)
-              : context.read<LabsBlocCubit>().mazadDecreament("B"),
+              ? context.read<LabsCubit>().mazadDecreament(team)
+              : context.read<LabsCubit>().mazadDecreament("B"),
           child: Container(
             decoration: BoxDecoration(
               color: ColorsManager.Primary,
@@ -30,7 +30,7 @@ class MazadButtons extends StatelessWidget {
             child: Center(
                 child: Text(
               "-",
-              style: Styles.homeStyle,
+              style: TextStyles.homeStyle,
             )),
           ),
         ),
@@ -39,8 +39,8 @@ class MazadButtons extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () => team == 'A'
-              ? context.read<LabsBlocCubit>().mazadIncreament(team)
-              : context.read<LabsBlocCubit>().mazadIncreament("B"),
+              ? context.read<LabsCubit>().mazadIncreament(team)
+              : context.read<LabsCubit>().mazadIncreament("B"),
           child: Container(
             decoration: BoxDecoration(
               color: ColorsManager.Primary,
@@ -51,7 +51,7 @@ class MazadButtons extends StatelessWidget {
             child: Center(
                 child: Text(
               "+",
-              style: Styles.homeStyle,
+              style: TextStyles.homeStyle,
             )),
           ),
         )

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:http/http.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 
 import '../../../../../core/theming/colors.dart';
@@ -20,13 +20,13 @@ class BuildTimerWidget extends StatelessWidget {
         fit: StackFit.expand,
         children: [
           CircularProgressIndicator(
-            value: context.read<PasswordTamseeBlocCubit>().second/PasswordTamseeBlocCubit.maxSeconds,
+            value: context.read<PasswordAndTamseelCubit>().second/PasswordAndTamseelCubit.maxSeconds,
             strokeWidth: 5,
             valueColor: AlwaysStoppedAnimation(Colors.white),
             backgroundColor: ColorsManager.Primary,
           ),
           Center(
-            child: Text("${context.read<PasswordTamseeBlocCubit>().second}",style: TextStyle(
+            child: Text("${context.read<PasswordAndTamseelCubit>().second}",style: TextStyle(
                 fontSize: 50,
                 color: Colors.white
             ),),

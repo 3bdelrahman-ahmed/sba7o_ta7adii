@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
 
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class ShowAnswers extends StatelessWidget {
   const ShowAnswers({super.key,
@@ -20,7 +20,7 @@ class ShowAnswers extends StatelessWidget {
       maintainAnimation: true,
       child: Container(
         width: 340.w,
-        height: 160.h,
+        height: 130.h,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -37,7 +37,7 @@ class ShowAnswers extends StatelessWidget {
             padding: EdgeInsets.all(10),
             child: Text(Answers ?? " Error",
               textDirection: TextDirection.rtl,
-              style: Styles.instructionStyle,),
+              style: TextStyles.instructionStyle,),
           ),
         ),
       ),);

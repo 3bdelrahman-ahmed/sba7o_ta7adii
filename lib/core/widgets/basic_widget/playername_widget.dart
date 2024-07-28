@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 
 class PlayersWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String? name;
-  name = context.read<PasswordTamseeBlocCubit>().name;
+  name = context.read<PasswordAndTamseelCubit>().name;
     return Container(
         width: MediaQuery.sizeOf(context).width,
-        height: 200.h,
+        height: 160.h,
         decoration: BoxDecoration(
           gradient: LinearGradient(
               begin: Alignment.topCenter,
@@ -27,7 +27,7 @@ class PlayersWidget extends StatelessWidget {
         child: Center(
             child: Text(
               "${name}",
-              style: Styles.homeStyle,
+              style: TextStyles.homeStyle,
             ))
     );
   }

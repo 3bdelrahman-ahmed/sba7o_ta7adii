@@ -21,10 +21,10 @@ class ArostyScreen extends StatelessWidget {
     return Scaffold(
         body: LayoutWidget(
           buttonWidget: ChangeWidget(onChanged: () {
-            context.read<PasswordTamseeBlocCubit>().getPlayer();
+            context.read<PasswordAndTamseelCubit>().getPlayer();
           },),
-          widget:  BlocConsumer<ArostyBlocCubit,ArostyBlocState>(builder: (context, stateA) {
-           return BlocBuilder<PasswordTamseeBlocCubit,PasswordTamseelBlocState>(builder: (context, stateP) {
+          widget:  BlocConsumer<ArostyCubit,ArostyBlocState>(builder: (context, stateA) {
+           return BlocBuilder<PasswordAndTamseelCubit,PasswordAndTamseelStates>(builder: (context, stateP) {
              return Center(
                child: Column(
                    children: [
@@ -43,18 +43,18 @@ class ArostyScreen extends StatelessWidget {
                        height: 25.h,
                      ),
                     CounterWidget(
-                      counter:context.read<ArostyBlocCubit>().counter,
+                      counter:context.read<ArostyCubit>().counter,
                     ),
                      SizedBox(
                        height: 45.h,
                      ),
                      CounterTeamWidget(
-                       team1: context.read<ArostyBlocCubit>().team1,
-                       team2: context.read<ArostyBlocCubit>().team2,
-                       onDecteamA: ()=>context.read<ArostyBlocCubit>().teamsDecreament('A'),
-                       onIncteamA: ()=>context.read<ArostyBlocCubit>().teamsIncreament('A'),
-                       onDecteamB: ()=>context.read<ArostyBlocCubit>().teamsDecreament('B'),
-                       onIncteamB: ()=>context.read<ArostyBlocCubit>().teamsIncreament('B'),
+                       team1: context.read<ArostyCubit>().team1,
+                       team2: context.read<ArostyCubit>().team2,
+                       onDecteamA: ()=>context.read<ArostyCubit>().teamsDecreament('A'),
+                       onIncteamA: ()=>context.read<ArostyCubit>().teamsIncreament('A'),
+                       onDecteamB: ()=>context.read<ArostyCubit>().teamsDecreament('B'),
+                       onIncteamB: ()=>context.read<ArostyCubit>().teamsIncreament('B'),
                      )
                    ],
                  ),

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/styles.dart';
+import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 
 class ImagePickeR extends StatefulWidget{
   @override
@@ -46,14 +46,14 @@ class _ImagePickeRState extends State<ImagePickeR> {
                 ),
                 alignment: Alignment.center,
                 child: Text('اختيار',
-                  style: Styles.textInButtonsStyle,
+                  style: TextStyles.textInButtonsStyle,
                 )
             ),
           ),
           const  SizedBox(width: 10,),
 
           imageFile==null?const Text('null'):Text(truncateText(imageFile!.name, 15),
-            style: Styles.instructionStyle,
+            style: TextStyles.instructionStyle,
           ),
 
           Icon(Icons.image,size: 35,)

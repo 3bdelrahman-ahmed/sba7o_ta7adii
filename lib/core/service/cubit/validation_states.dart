@@ -1,4 +1,4 @@
-part of 'validation_bloc_cubit.dart';
+part of 'validation_cubit.dart';
 
 @immutable
 abstract class ValidationBlocState {}

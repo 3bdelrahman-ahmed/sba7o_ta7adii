@@ -7,8 +7,8 @@ import 'package:spa7o_ta7adii/core/service/models/labsDm.dart';
 
 import 'labs_bloc_states.dart';
 
-class LabsBlocCubit extends Cubit<LabsBlocStates> {
-  LabsBlocCubit() : super(InitialState()){
+class LabsCubit extends Cubit<LabsBlocStates> {
+  LabsCubit() : super(InitialState()){
     getQuest();
   }
    LabsDm? labsDm ;
@@ -37,6 +37,7 @@ class LabsBlocCubit extends Cubit<LabsBlocStates> {
   int team1=0;
   int team2=0;
   void teamsIncreament(String team){
+    print("increamitn object");
     if(team == 'A'){
       team1++;
     }

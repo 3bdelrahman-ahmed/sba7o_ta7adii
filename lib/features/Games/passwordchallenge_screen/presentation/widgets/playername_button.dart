@@ -4,13 +4,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
 
 import '../../../../../core/theming/colors.dart';
-import '../../../../../core/theming/styles.dart';
+import '../../../../../core/theming/text_styles.dart';
 
 class PlayerClueButton extends StatelessWidget {
   const PlayerClueButton({super.key});
   @override
   Widget build(BuildContext context) {
-    bool isVisible = context.read<MeenAnaBlocCubit>().isVisible;
+    bool isVisible = context.read<MeenAnaCubit>().isVisible;
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -35,12 +35,12 @@ class PlayerClueButton extends StatelessWidget {
               height: 80.h,
               child: Center(
                   child: Text(
-                    context.read<MeenAnaBlocCubit>().player ?? " انا اسم اللاعب يناصر",
-                    style: Styles.instructionStyle.copyWith(fontSize: 20),
+                    context.read<MeenAnaCubit>().player ?? " انا اسم اللاعب يناصر",
+                    style: TextStyles.instructionStyle.copyWith(fontSize: 20),
                   )),
             )),
         GestureDetector(
-          onTap: () => context.read<MeenAnaBlocCubit>().changeVisibility(),
+          onTap: () => context.read<MeenAnaCubit>().changeVisibility(),
           child: Container(
             decoration: BoxDecoration(
               color: ColorsManager.Primary.withOpacity(0.8),
@@ -51,7 +51,7 @@ class PlayerClueButton extends StatelessWidget {
             child: Center(
                 child: Text(
                   isVisible ? "اخفاء اسم اللاعب" : "اسم اللاعب",
-                  style: Styles.instructionStyle.copyWith(fontSize: 18),
+                  style: TextStyles.instructionStyle.copyWith(fontSize: 18),
                 )),
           ),
         ),
