@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/core/utils/app_strings.dart';
 import 'package:spa7o_ta7adii/features/Games/erza3s7_screen/presentation/pages/erza3_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/pages/labs_screen.dart';
@@ -12,6 +11,7 @@ import 'package:spa7o_ta7adii/features/Games/tamsel_screen/presentation/pages/ta
 import 'package:spa7o_ta7adii/features/home_screen/presentaion/home_screen.dart';
 import 'package:spa7o_ta7adii/features/splash_screen/presentaion/splash_screen.dart';
 
+import '../core/utils/styles.dart';
 import '../features/Games/arosty_screen/presentation/pages/arosty_screen.dart';
 import '../features/Games/bank_screen/presentation/pages/bank_screen.dart';
 import '../features/instructions_screen/presentaion/instructions_screen.dart';

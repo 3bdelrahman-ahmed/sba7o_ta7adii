@@ -4,9 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/manager/cubit/bloc_cubit.dart';
 
-import '../../service/cubit/password_and_tamseel_cubit.dart';
-import '../../theming/colors.dart';
-import '../../theming/text_styles.dart';
+
+import '../../utils/colors.dart';
+import '../../utils/styles.dart';
 
 class CounterWidget extends StatelessWidget {
    CounterWidget({required this.counter});

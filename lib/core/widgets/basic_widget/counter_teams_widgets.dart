@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 
-import '../../theming/colors.dart';
-import '../../theming/text_styles.dart';
+
+
+import '../../utils/colors.dart';
+import '../../utils/styles.dart';
 
 class CounterTeamWidget extends StatelessWidget {
   int team1;

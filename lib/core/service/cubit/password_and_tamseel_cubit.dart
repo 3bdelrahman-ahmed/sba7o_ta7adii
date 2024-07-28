@@ -65,8 +65,8 @@ import 'package:spa7o_ta7adii/core/service/cubit/pasword_and_tamseel_states.dart
     else {
       stopTimer(reset: false);
       emit(TimerPausedState());
-    }
-  }
+
+    }}
 
 
  static const int maxSeconds = 30;
@@ -76,23 +76,21 @@ import 'package:spa7o_ta7adii/core/service/cubit/pasword_and_tamseel_states.dart
     second = maxSeconds;
     print(state);
   }
-
   void stopTimer({bool reset = true}) {
     if (reset) {
       resetTimer();
       emit(TimerCompletedState());
-    } else {
+    } else{
       emit(TimerPausedState());
     }
     print(state);
     timer?.cancel();
   }
-
   void startTimer({bool reset = true}) {
     if (reset) resetTimer();
     timer?.cancel(); // Cancel any existing timer before starting a new one
     timer = Timer.periodic(Duration(seconds: 1), (_) {
-      if (second > 0) {
+      if (second > 0){
         emit(TimerRunningState());
         print(second);
         second--;

@@ -2,9 +2,9 @@ import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:list_wheel_scroll_view_nls/list_wheel_scroll_view_nls.dart';
 import 'package:nb_utils/nb_utils.dart';
-import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
 import 'package:spa7o_ta7adii/core/utils/app_assets.dart';
 import 'package:spa7o_ta7adii/core/widgets/app_default_image_view.dart';
 import 'package:spa7o_ta7adii/core/widgets/home_screen_widgets/game_card_widget.dart';

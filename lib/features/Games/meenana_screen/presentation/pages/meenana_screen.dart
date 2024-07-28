@@ -1,20 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
-import 'package:spa7o_ta7adii/core/widgets/basic_widget/arrows_widgets.dart';
-import 'package:spa7o_ta7adii/core/widgets/basic_widget/change_widget.dart';
-import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.dart';
+import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/layout_widget.dart';
-import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/widgets/tableof_clues.dart';
-import 'package:spa7o_ta7adii/core/widgets/basic_widget/answer_button_widget.dart';
-
-import 'dart:ui' as ui;
-
-import '../../../../../core/theming/colors.dart';
+import '../../../../../core/widgets/basic_widget/change_widget.dart';
 import '../../../passwordchallenge_screen/presentation/widgets/playername_button.dart';
 import '../manager/cubit/meenana_cubit.dart';
 import '../manager/cubit/meenana_states.dart';

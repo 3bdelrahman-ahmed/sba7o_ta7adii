@@ -2,14 +2,15 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:o3d/o3d.dart';
-import 'package:spa7o_ta7adii/config/app_routes.dart';
+import 'package:spa7o_ta7adii/core/utils/app_assets.dart';
 import 'dart:ui' as ui;
 
 import 'package:spa7o_ta7adii/core/widgets/home_screen_widgets/game_card_widget.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_BG.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_instr.dart';
-import 'package:spa7o_ta7adii/features/instructions_screen/presentaion/instructions_screen.dart';
+
+import '../../../config/app_routes.dart';
 
 class HomeScreen extends StatelessWidget{
     O3DController controller = O3DController();
@@ -25,7 +26,7 @@ class HomeScreen extends StatelessWidget{
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Image.asset(
-          'assets/staduim.jpeg',
+          AppAssets.placeHolder,
           fit: BoxFit.fill,
         ),
       ),
@@ -44,16 +45,15 @@ Center(
   child: ImageFiltered(
     imageFilter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
     child: Image.asset(
-      'assets/noso7y.png',
+      AppAssets.spa7o,
       scale: 7.5,
     ),
   ),
 ),
-   
-   GridView.builder
+      GridView.builder
    (
     itemCount: GamesNames.gameNames.length,
-    gridDelegate: 
+    gridDelegate:
    SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
     itemBuilder: (context,  index){
       return GestureDetector(

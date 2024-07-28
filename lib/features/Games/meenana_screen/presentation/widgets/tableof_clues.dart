@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
+import 'package:spa7o_ta7adii/core/utils/app_assets.dart';
+import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
 
 class TableOfClues extends StatelessWidget {
@@ -12,7 +13,7 @@ class TableOfClues extends StatelessWidget {
     return  Stack(
       textDirection: TextDirection.rtl,
       children: [
-        Image.asset("assets/Picsart.png",fit: BoxFit.fill,),
+        Image.asset(AppAssets.card,fit: BoxFit.fill,),
         Positioned(
             right: 60.w,
             left: 60.h,

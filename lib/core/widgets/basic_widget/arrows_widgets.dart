@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
-
-import '../../../../../core/theming/text_styles.dart';
+import '../../utils/styles.dart';
 
 class ArrowsWidget extends StatelessWidget {
   const ArrowsWidget({super.key});

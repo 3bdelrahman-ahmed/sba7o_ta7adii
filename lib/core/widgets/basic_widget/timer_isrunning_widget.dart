@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../theming/colors.dart';
-import '../../theming/text_styles.dart';
+
+import '../../utils/colors.dart';
+import '../../utils/styles.dart';
 import '../../service/cubit/password_and_tamseel_cubit.dart';
 
 class TimerIsRunning extends StatelessWidget {

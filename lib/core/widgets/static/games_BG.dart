@@ -1,17 +1,17 @@
 
+import 'package:spa7o_ta7adii/core/utils/app_assets.dart';
+
 class GamesBackGrounds {
   static List <String> gamesBG=
   [
-    "assets/acting.jpeg",
-    "assets/playershadow.jpg",
-    "assets/friend.jpeg",
-    "assets/risk.jpeg",
-    "assets/bank.jpeg",
-    "assets/lock.jpeg",
-    "assets/speed.jpeg",
-    "assets/who.jpeg",
-    "assets/whoisPic.jpg",
-    "assets/arza3.jpeg",
-    "assets/challe.jpg"
+    AppAssets.acting,
+     AppAssets.meenAna,
+     AppAssets.labsSa7pk,
+    AppAssets.risk,
+    AppAssets.lock,
+    AppAssets.sepa2Sor3a,
+    AppAssets.araosty,
+    AppAssets.whoIsInThePic,
+    AppAssets.et7adaElgomhor
   ];
 }

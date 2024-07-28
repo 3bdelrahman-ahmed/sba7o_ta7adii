@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-import '../../theming/text_styles.dart';
+
+import '../../utils/styles.dart';
 
 class ChangeWidget extends StatelessWidget {
   final VoidCallback onChanged;

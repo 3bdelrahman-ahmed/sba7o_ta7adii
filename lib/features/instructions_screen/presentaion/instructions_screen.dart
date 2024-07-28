@@ -3,15 +3,11 @@ import 'dart:ui';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
+import 'package:spa7o_ta7adii/core/utils/colors.dart';
+import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_instr.dart';
-import 'package:spa7o_ta7adii/core/widgets/static/screens_list.dart';
-
-import '../../../config/app_routes.dart';
 import '../../../core/helper/gameSelector.dart';
 
 

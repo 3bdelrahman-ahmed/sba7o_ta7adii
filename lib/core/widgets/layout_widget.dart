@@ -7,12 +7,9 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui' as ui;
 
-import 'basic_widget/arrows_widgets.dart';
-import 'basic_widget/playername_widget.dart';
 
 class LayoutWidget extends StatelessWidget {
   final Widget widget;

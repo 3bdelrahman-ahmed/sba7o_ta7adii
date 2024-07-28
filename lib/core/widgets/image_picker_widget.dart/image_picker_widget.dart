@@ -4,11 +4,13 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
+
+import '../../utils/colors.dart';
+import '../../utils/styles.dart';
+
+
 
 class ImagePickeR extends StatefulWidget{
-  @override
   final Function(String?) onUpdateDownloadUrl;
   int index = 0;
   ImagePickeR({required this.onUpdateDownloadUrl});

@@ -1,18 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:lottie/lottie.dart';
-import 'package:spa7o_ta7adii/config/app_routes.dart';
-import 'package:spa7o_ta7adii/core/utils/app_assets.dart';
-import 'package:spa7o_ta7adii/core/widgets/app_default_image_view.dart';
-import '../../../core/theming/colors.dart';
+import '../../../config/app_routes.dart';
+import '../../../core/utils/app_assets.dart';
+import '../../../core/utils/colors.dart';
+import '../../../core/widgets/app_default_image_view.dart';
 
 class SplashScreen extends StatefulWidget {
+  static String route = "Splash";
+
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+
   @override
   void initState() {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
@@ -54,6 +58,7 @@ class _SplashScreenState extends State<SplashScreen> {
             )
           ],
         ),
+
       ),
     );
   }

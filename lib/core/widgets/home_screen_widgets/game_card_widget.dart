@@ -1,8 +1,11 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/theming/colors.dart';
-import 'package:spa7o_ta7adii/core/theming/text_styles.dart';
+
+import '../../utils/colors.dart';
+import '../../utils/styles.dart';
+
+
 
 class GameCard extends StatefulWidget {
   final String gameTitle;

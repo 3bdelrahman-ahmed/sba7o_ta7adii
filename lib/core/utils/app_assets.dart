@@ -6,6 +6,7 @@ class AppAssets{
   static const String arza3Sa7 = "assets/arza3.jpeg";
   static const String bank = "assets/bank.jpeg";
   static const String card = "assets/card.png";
+  static const String sepa2Sor3a = "assets/speed.jpeg";
   static const String et7adaElgomhor = "assets/challenge.jpg";
   static const String lock = "assets/lock.jpeg";
   static const String appLogo = "assets/logo.jpg";
@@ -15,6 +16,8 @@ class AppAssets{
   static const String stadium = "assets/staduim.jpeg";
   static const String araosty = "assets/araosty.jpeg";
   static const String whoIsInThePic = "assets/whoisPic.jpg";
+  static const String meenAna = "assets/who.jpeg";
+  static const String labsSa7pk = "assets/labsSa7pk.jpeg";
 
   /// [lotties]
   static const String footballCharacter = "assets/lotties/footballCharacter.json";
