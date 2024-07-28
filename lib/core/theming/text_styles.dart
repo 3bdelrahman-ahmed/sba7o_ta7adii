@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-abstract class Styles {
+abstract class TextStyles {
   static TextStyle homeStyle =  GoogleFonts.habibi(
       color: Colors.white,
       fontSize: 20.sp,
@@ -25,22 +25,22 @@ abstract class Styles {
 
   static TextStyle instructionStyle =  GoogleFonts.katibeh(
     color: Colors.white,
-    fontSize: 24,
+    fontSize: 24.sp,
   );
 
   static TextStyle CluesStyle = GoogleFonts.katibeh(
     color: Colors.white,
-    fontSize: 18,
+    fontSize: 18.sp,
   );
 
   static TextStyle GamesListStyle =  GoogleFonts.katibeh(
     color: Colors.black,
-    fontSize: 24,
+    fontSize: 24.sp,
   );
 
    static TextStyle textInButtonsStyle =  GoogleFonts.katibeh(
     color: Colors.white,
-    fontSize: 18,
+    fontSize: 18.sp,
     fontWeight: FontWeight.bold,
   );
 }
