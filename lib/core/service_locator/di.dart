@@ -10,7 +10,7 @@ import '../service/cubit/password_and_tamseel_cubit.dart';
 
 var locator = GetIt.instance;
 
-void DependencyInjectionSetup (){
+void DependencyInjectionSetup(){
   locator.registerFactory(() => PasswordAndTamseelCubit());
   locator.registerFactory(() => ValidationCubit());
   locator.registerFactory(() => MeenXelsoraCubit());

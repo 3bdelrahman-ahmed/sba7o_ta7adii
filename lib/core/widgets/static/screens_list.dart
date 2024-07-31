@@ -17,9 +17,7 @@ class GamesList {
     const TamseelScreen(),
     const MeenAnaScreen(),
     const LabsSa7bkScreen(),
-     RiskScreen(),
-    BankScreen(),
-
+    const RiskScreen(),
     const PasswordScreen(),
     const Seba2Screen(),
     const ArostyScreen(),
