@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:ui' as ui;
 
+import '../utils/app_assets.dart';
+
 
 class LayoutWidget extends StatelessWidget {
   final Widget widget;
@@ -24,7 +26,7 @@ class LayoutWidget extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Image.asset(
-            'assets/staduim.jpeg',
+            AppAssets.stadium,
             fit: BoxFit.fill,
           ),
         ),
@@ -41,7 +43,7 @@ class LayoutWidget extends StatelessWidget {
           child: ImageFiltered(
             imageFilter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
             child: Image.asset(
-              'assets/noso7y.png',
+              AppAssets.spa7o,
               scale: 7.5,
             ),
           ),

@@ -9,6 +9,7 @@ import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_names.dart';
 import 'package:spa7o_ta7adii/core/widgets/static/games_instr.dart';
 import '../../../core/helper/gameSelector.dart';
+import '../../../core/utils/app_assets.dart';
 
 
 class InstructionsScreen extends StatefulWidget {
@@ -40,7 +41,7 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Image.asset(
-            'assets/staduim.jpeg',
+            AppAssets.stadium,
             fit: BoxFit.fill,
           ),
         ),
@@ -56,7 +57,7 @@ class _InstructionsScreenState extends State<InstructionsScreen> {
           child: ImageFiltered(
             imageFilter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
             child: Image.asset(
-              'assets/noso7y.png',
+              AppAssets.spa7o,
               scale: 7.5,
             ),
           ),

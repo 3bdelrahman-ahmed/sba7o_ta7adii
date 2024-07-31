@@ -14,9 +14,9 @@ class AppAssets{
   static const String risk = "assets/risk.jpeg";
   static const String spa7o = "assets/saba7o.png";
   static const String stadium = "assets/staduim.jpeg";
-  static const String araosty = "assets/araosty.jpeg";
+  static const String araosty = "assets/arosty.jpeg";
   static const String whoIsInThePic = "assets/whoisPic.jpg";
-  static const String meenAna = "assets/who.jpeg";
+  static const String meenAna = "assets/meenana.jpg";
   static const String labsSa7pk = "assets/labsSa7pk.jpeg";
 
   /// [lotties]

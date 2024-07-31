@@ -161,13 +161,13 @@ class InstructionsList {
  static List <String> photos=
   [
     "assets/acting.jpeg",
-    "assets/playershadow.jpg",
+    "assets/meenana.jpg",
     "assets/friend.jpeg",
     "assets/risk.jpeg",
     "assets/bank.jpeg",
     "assets/lock.jpeg",
     "assets/speed.jpeg",
-    "assets/who.jpeg",
+    "assets/arosty.jpeg",
     "assets/whoisPic.jpg",
     "assets/arza3.jpeg",
   ];

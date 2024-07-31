@@ -26,7 +26,7 @@ class HomeScreen extends StatelessWidget{
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Image.asset(
-          AppAssets.placeHolder,
+          AppAssets.stadium,
           fit: BoxFit.fill,
         ),
       ),
@@ -66,7 +66,6 @@ Center(
         );
     }
     )
-
 
     ],
   ),
