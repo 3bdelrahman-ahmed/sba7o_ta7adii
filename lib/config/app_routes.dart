@@ -74,16 +74,8 @@ class AppRouter {
         return animateRouteBuilder(PasswordScreen());
       case AppRouting.tamseelScreen:
         return animateRouteBuilder(TamseelScreen());
-      default:
-        return animateRouteBuilder(Scaffold(
-          body: Center (
-            child: Text(AppStrings.thisPageNotFound,
-            style: TextStyles.headingStyle,
-            ),
-          ),
-        ));
-
     }
+    return null;
   }
 
   // static Route<dynamic> buildPageRoute(
