@@ -59,7 +59,6 @@ class LayoutWidget extends StatelessWidget {
           right: 10.h,
           child:
              widget
-          
         )
       ],
     );

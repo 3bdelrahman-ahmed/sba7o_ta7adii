@@ -37,7 +37,6 @@ class LabsCubit extends Cubit<LabsBlocStates> {
   int team1=0;
   int team2=0;
   void teamsIncreament(String team){
-    print("increamitn object");
     if(team == 'A'){
       team1++;
     }

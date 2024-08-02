@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:spa7o_ta7adii/core/utils/app_strings.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
 
@@ -30,12 +32,9 @@ class ShowAnswers extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: SingleChildScrollView(
-          child: Padding(
-            padding: EdgeInsets.all(10),
-            child: Text(Answers ?? " Error",
-              textDirection: TextDirection.rtl,
-              style: TextStyles.instructionStyle,),
-          ),
+          child: Text(Answers ?? AppStrings.somethingWentWrong,
+            textDirection: TextDirection.rtl,
+            style: TextStyles.instructionStyle,).paddingAll(10.h),
         ),
       ),);
   }
