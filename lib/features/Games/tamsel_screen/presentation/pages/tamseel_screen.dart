@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/pasword_and_tamseel_states.dart';
-import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.dart';
+import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_team_widget/counter_teams_widgets.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/timer_isrunning_widget.dart';
 import '../../../../../core/widgets/basic_widget/change_widget.dart';
 import '../../../../../core/widgets/basic_widget/playername_widget.dart';
@@ -70,16 +70,16 @@ class TamseelScreen extends StatelessWidget {
                       child: CounterTeamWidget(
                         team1: context.read<PasswordAndTamseelCubit>().team1,
                         team2: context.read<PasswordAndTamseelCubit>().team2,
-                        onDecteamA: () => context
+                        onDecTeamA: () => context
                             .read<PasswordAndTamseelCubit>()
                             .teamsDecreament('A'),
-                        onIncteamA: () => context
+                        onIncTeamA: () => context
                             .read<PasswordAndTamseelCubit>()
                             .teamsIncreament('A'),
-                        onDecteamB: () => context
+                        onDecTeamB: () => context
                             .read<PasswordAndTamseelCubit>()
                             .teamsDecreament('B'),
-                        onIncteamB: () => context
+                        onIncTeamB: () => context
                             .read<PasswordAndTamseelCubit>()
                             .teamsIncreament('B'),
                       ))

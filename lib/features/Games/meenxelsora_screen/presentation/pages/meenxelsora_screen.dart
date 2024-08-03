@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_teams_widgets.dart';
+import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_team_widget/counter_teams_widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_bloc_states.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
@@ -62,16 +62,16 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
                 CounterTeamWidget(
                     team1: context.read<MeenXelsoraCubit>().team1,
                     team2: context.read<MeenXelsoraCubit>().team2,
-                    onIncteamA: () => context
+                    onIncTeamA: () => context
                         .read<MeenXelsoraCubit>()
                         .teamsIncreament('A'),
-                    onIncteamB: () => context
+                    onIncTeamB: () => context
                         .read<MeenXelsoraCubit>()
                         .teamsIncreament('B'),
-                    onDecteamA: () => context
+                    onDecTeamA: () => context
                         .read<MeenXelsoraCubit>()
                         .teamsDecreament('A'),
-                    onDecteamB: () => context
+                    onDecTeamB: () => context
                         .read<MeenXelsoraCubit>()
                         .teamsDecreament('B')),
               ],
