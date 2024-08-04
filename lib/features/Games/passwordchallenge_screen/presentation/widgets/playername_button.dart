@@ -36,7 +36,7 @@ class PlayerClueButton extends StatelessWidget {
               height: 80.h,
               child: Center(
                   child: Text(
-                    context.read<MeenAnaCubit>().player ?? AppStrings.somethingWentWrong,
+                    context.watch<MeenAnaCubit>().player ?? AppStrings.somethingWentWrong,
                     style: TextStyles.instructionStyle.copyWith(fontSize: 20),
                   )),
             )),

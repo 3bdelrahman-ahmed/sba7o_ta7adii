@@ -9,7 +9,7 @@ class TableOfClues extends StatelessWidget {
   const TableOfClues({super.key});
   @override
   Widget build(BuildContext context) {
-    final tableOfClues = context.read<MeenAnaCubit>().TableofClues;
+    final tableOfClues = context.watch<MeenAnaCubit>().TableofClues;
     return  Stack(
       textDirection: TextDirection.rtl,
       children: [
