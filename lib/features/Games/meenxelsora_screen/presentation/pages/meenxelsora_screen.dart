@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_team_widget/counter_teams_widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_bloc_states.dart';
@@ -21,6 +21,7 @@ class MeenXelsoraScreen extends StatefulWidget {
 
 class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
   bool isVisible = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,49 +35,39 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
             return const Center(
               child: CircularProgressIndicator(
                 strokeWidth: 5,
-                backgroundColor: Colors.white,
               ),
             );
-          } else {
+          }
             return Column(
               children: [
                 SquadPhoto(),
-                SizedBox(
-                  height: 15.h,
-                ),
+                15.height,
                 SquadName(),
                 ShowAnswersButton(
                   isVisible: context.read<MeenXelsoraCubit>().isVisible,
-                  onChange: ()=>context.read<MeenXelsoraCubit>().changeVisibility(),
+                  onChange: () =>
+                      context.read<MeenXelsoraCubit>().changeVisibility(),
                 ),
-                SizedBox(
-                  height: 10.h,
-                ),
+                10.height,
                 ShowAnswers(
                   isVisible: context.read<MeenXelsoraCubit>().isVisible,
                   Answers: context.read<MeenXelsoraCubit>().players,
                 ),
-                SizedBox(
-                  height: 10.h,
-                ),
+                10.height,
                 CounterTeamWidget(
                     team1: context.read<MeenXelsoraCubit>().team1,
                     team2: context.read<MeenXelsoraCubit>().team2,
-                    onIncTeamA: () => context
-                        .read<MeenXelsoraCubit>()
-                        .teamsIncreament('A'),
-                    onIncTeamB: () => context
-                        .read<MeenXelsoraCubit>()
-                        .teamsIncreament('B'),
-                    onDecTeamA: () => context
-                        .read<MeenXelsoraCubit>()
-                        .teamsDecreament('A'),
-                    onDecTeamB: () => context
-                        .read<MeenXelsoraCubit>()
-                        .teamsDecreament('B')),
+                    onIncTeamA: () =>
+                        context.read<MeenXelsoraCubit>().teamsIncreament('A'),
+                    onIncTeamB: () =>
+                        context.read<MeenXelsoraCubit>().teamsIncreament('B'),
+                    onDecTeamA: () =>
+                        context.read<MeenXelsoraCubit>().teamsDecreament('A'),
+                    onDecTeamB: () =>
+                        context.read<MeenXelsoraCubit>().teamsDecreament('B')),
               ],
             );
-          }
+
         },
         listener: (context, state) {},
       ),

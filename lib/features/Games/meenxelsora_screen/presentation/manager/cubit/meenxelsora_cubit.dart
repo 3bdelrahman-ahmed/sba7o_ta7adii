@@ -58,7 +58,7 @@ class MeenXelsoraCubit extends Cubit<MeenXelsoraBlocStates>{
         isVisible = false;
         emit(SuccessGetSquad());
        }
-    }on Exception catch(e)
+    }on Exception
     {
       emit(FailedGetSquad());
     }
