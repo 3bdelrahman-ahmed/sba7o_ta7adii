@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
 
 import '../../../../../core/utils/styles.dart';
@@ -10,7 +11,7 @@ class SquadName extends StatelessWidget {
   Widget build(BuildContext context) {
     String? team = context.watch<MeenXelsoraCubit>().team;
     return Container(
-        width: MediaQuery.sizeOf(context).width*.9,
+        width: ScreenUtil.defaultSize.width*.9,
         child: Text( team!,style:
         TextStyles.instructionStyle,textDirection: TextDirection.rtl,));
   }
