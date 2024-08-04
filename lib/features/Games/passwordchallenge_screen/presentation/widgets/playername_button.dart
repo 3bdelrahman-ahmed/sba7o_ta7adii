@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nb_utils/nb_utils.dart';
+import 'package:spa7o_ta7adii/core/utils/app_strings.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
@@ -34,26 +36,23 @@ class PlayerClueButton extends StatelessWidget {
               height: 80.h,
               child: Center(
                   child: Text(
-                    context.read<MeenAnaCubit>().player ?? " انا اسم اللاعب يناصر",
+                    context.watch<MeenAnaCubit>().player ?? AppStrings.somethingWentWrong,
                     style: TextStyles.instructionStyle.copyWith(fontSize: 20),
                   )),
             )),
-        GestureDetector(
-          onTap: () => context.read<MeenAnaCubit>().changeVisibility(),
-          child: Container(
-            decoration: BoxDecoration(
-              color: ColorsManager.Primary.withOpacity(0.8),
-              borderRadius: BorderRadius.circular(20),
-            ),
-            width: 130.w,
-            height: 50.h,
-            child: Center(
-                child: Text(
-                  isVisible ? "اخفاء اسم اللاعب" : "اسم اللاعب",
-                  style: TextStyles.instructionStyle.copyWith(fontSize: 18),
-                )),
+        Container(
+          decoration: BoxDecoration(
+            color: ColorsManager.Primary.withOpacity(0.8),
+            borderRadius: BorderRadius.circular(20),
           ),
-        ),
+          width: 130.w,
+          height: 50.h,
+          child: Center(
+              child: Text(
+                isVisible ? AppStrings.hidePlayer :AppStrings.showPlayer,
+                style: TextStyles.instructionStyle.copyWith(fontSize: 18),
+              )),
+        ).onTap(() => context.read<MeenAnaCubit>().changeVisibility()),
       ],
     );
   }

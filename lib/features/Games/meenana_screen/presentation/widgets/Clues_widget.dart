@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
+import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
 
@@ -29,7 +30,7 @@ class CluesWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: Center(
               child: Text(
-               context.read<MeenAnaCubit>().Clues[index] ?? "",
+               context.read<MeenAnaCubit>().Clues[index] ?? AppStrings.somethingWentWrong,
                 style: TextStyles.CluesStyle.copyWith(
                   fontSize: 22
                 ),

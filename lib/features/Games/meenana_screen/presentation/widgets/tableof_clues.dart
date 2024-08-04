@@ -9,7 +9,7 @@ class TableOfClues extends StatelessWidget {
   const TableOfClues({super.key});
   @override
   Widget build(BuildContext context) {
-    final tableofclues = context.read<MeenAnaCubit>().TableofClues;
+    final tableOfClues = context.watch<MeenAnaCubit>().TableofClues;
     return  Stack(
       textDirection: TextDirection.rtl,
       children: [
@@ -22,11 +22,11 @@ class TableOfClues extends StatelessWidget {
             child: Container(
               height: 350.h,
               child: ListView.builder(
-                itemCount: tableofclues.length,
+                itemCount: tableOfClues.length,
                 itemBuilder: (context, index) {
                   return Column(
                     children: [
-                      Text(tableofclues[index]??"",
+                      Text(tableOfClues[index]??"",
                         textDirection: TextDirection.rtl,
                       style: TextStyles.GamesListStyle.copyWith(
                         color: Colors.black,
