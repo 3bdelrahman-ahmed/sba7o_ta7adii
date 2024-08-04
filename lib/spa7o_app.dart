@@ -7,10 +7,10 @@ import 'package:spa7o_ta7adii/core/service/cubit/validation_cubit.dart';
 import 'package:spa7o_ta7adii/core/service_locator/di.dart';
 import 'package:spa7o_ta7adii/features/Games/arosty_screen/presentation/manager/cubit/bloc_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_cubit.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/risk_screen/domain/cubit/risk_cubit.dart';
 
 import 'features/Games/meenana_screen/presentation/manager/cubit/meenana_cubit.dart';
+import 'features/Games/meenxelsora_screen/view_model/cubit/meenxelsora_cubit.dart';
 
 class Spa7oApp extends StatelessWidget {
   const Spa7oApp({Key? key}) : super(key: key);

@@ -5,7 +5,7 @@ import 'package:spa7o_ta7adii/features/Games/bank_screen/presentation/pages/bank
 import 'package:spa7o_ta7adii/features/Games/erza3s7_screen/presentation/pages/erza3_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/pages/labs_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/pages/meenana_screen.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/pages/meenxelsora_screen.dart';
+import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/view/screens/meenxelsora_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/passwordchallenge_screen/presentation/pages/passwordchallenge_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/risk_screen/presentation/pages/risk_screen.dart';
 import 'package:spa7o_ta7adii/features/Games/seba2_screen/presentation/pages/seba2_screen.dart';

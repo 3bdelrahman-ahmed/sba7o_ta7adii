@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_team_widget/counter_teams_widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_bloc_states.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/manager/cubit/meenxelsora_cubit.dart';
+import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/view_model/cubit/meenxelsora_states.dart';
+import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/view_model/cubit/meenxelsora_cubit.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/change_widget.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/answer_button_widget.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/show_names_widget.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/squad_name_widget.dart';
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/widget/squad_photo_widget.dart';
+import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/view/widgets/show_names_widget.dart';
+import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/view/widgets/squad_name_widget.dart';
+import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/view/widgets/squad_photo_widget.dart';
 
 import '../../../../../core/widgets/layout_widget.dart';
 
