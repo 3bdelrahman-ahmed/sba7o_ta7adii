@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/layout_widget.dart';
@@ -19,19 +20,25 @@ class MeenAnaScreen extends StatelessWidget {
     return Scaffold(
         body: LayoutWidget(
       buttonWidget: ChangeWidget(onChanged:() => context.read<MeenAnaCubit>().getMeenAnaPlayer()),
-      widget: BlocConsumer<MeenAnaCubit, MeenAnaBlocStates>(
-        builder: (context, state) {
-          if(state is LoadingState)
-            {
-              return Center(
-                child: CircularProgressIndicator(
-                  strokeWidth: 5,
-                ),
-              );
-            }
-          return Column(
+      widget:
+           Column(
             children: [
-              CluesWidget(),
+              BlocBuilder<MeenAnaCubit, MeenAnaBlocStates>(builder: (context, state){
+                if(state is LoadingState)
+                {
+                  return Container(
+                    width: ScreenUtil.defaultSize.width,
+                    height: 170.h,
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        strokeWidth: 5,
+                      ),
+                    ),
+                  );
+                }
+                else
+                  return CluesWidget();
+              },),
               10.height,
             Row(
               children: [
@@ -41,10 +48,9 @@ class MeenAnaScreen extends StatelessWidget {
               PlayerClueButton(),
             TableOfClues()
             ],
-          );
-        },
-        listener: (context, state) {},
-      ),
+          )
+        ,
+
     ));
   }
 }
