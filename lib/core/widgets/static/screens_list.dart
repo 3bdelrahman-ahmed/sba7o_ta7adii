@@ -10,7 +10,7 @@ import 'package:spa7o_ta7adii/features/Games/tamsel_screen/presentation/pages/ta
 import '../../../features/Games/bank_screen/presentation/pages/bank_screen.dart';
 import '../../../features/Games/labsSa7bah_screen/presentation/pages/labs_screen.dart';
 import '../../../features/Games/meenana_screen/presentation/pages/meenana_screen.dart';
-import '../../../features/Games/meenxelsora_screen/presentation/pages/meenxelsora_screen.dart';
+import '../../../features/Games/meenxelsora_screen/view/screens/meenxelsora_screen.dart';
 
 class GamesList {
     static List<Widget> screens =  [

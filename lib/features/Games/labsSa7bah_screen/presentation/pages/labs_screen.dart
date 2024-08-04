@@ -12,7 +12,7 @@ import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widg
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/quest_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/start_to_play.dart';
 import '../../../../../core/widgets/layout_widget.dart';
-import '../../../meenxelsora_screen/presentation/widget/show_names_widget.dart';
+import '../../../meenxelsora_screen/view/widgets/show_names_widget.dart';
 
 class LabsSa7bkScreen extends StatelessWidget {
   const LabsSa7bkScreen({super.key});

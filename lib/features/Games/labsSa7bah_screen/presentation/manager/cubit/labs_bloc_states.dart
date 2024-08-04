@@ -1,4 +1,4 @@
-import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/pages/meenxelsora_screen.dart';
+import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/view/screens/meenxelsora_screen.dart';
 
 abstract class LabsBlocStates {}
 
