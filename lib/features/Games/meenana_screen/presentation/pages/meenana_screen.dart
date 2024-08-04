@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:spa7o_ta7adii/core/utils/styles.dart';
 import 'package:spa7o_ta7adii/core/widgets/layout_widget.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/widgets/tableof_clues.dart';
+import '../../../../../core/utils/app_strings.dart';
 import '../../../../../core/widgets/basic_widget/change_widget.dart';
 import '../../../passwordchallenge_screen/presentation/widgets/playername_button.dart';
 import '../manager/cubit/meenana_cubit.dart';
@@ -31,17 +32,12 @@ class MeenAnaScreen extends StatelessWidget {
           return Column(
             children: [
               CluesWidget(),
-              SizedBox(
-                height: 10.h,
-              ),
-            GestureDetector(
-              onTap:() => context.read<MeenAnaCubit>().addingclue(),
-              child: Row(
-                children: [
-                  Icon(Icons.arrow_back_sharp,color: Colors.white,size: 40,),
-                 Text("الكلو التالي",style: TextStyles.homeStyle,)],
-              ),
-            ),
+              10.height,
+            Row(
+              children: [
+                Icon(Icons.arrow_back_sharp,color: Colors.white,size: 40,),
+               Text(AppStrings.nextClue,style: TextStyles.homeStyle,)],
+            ).onTap(()=>context.read<MeenAnaCubit>().addingClue()),
               PlayerClueButton(),
             TableOfClues()
             ],

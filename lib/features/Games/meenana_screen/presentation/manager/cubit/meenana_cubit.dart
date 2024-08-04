@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:spa7o_ta7adii/core/service/models/meenAnaDm.dart';
+import 'package:spa7o_ta7adii/core/utils/app_strings.dart';
 import 'package:spa7o_ta7adii/features/Games/meenana_screen/presentation/manager/cubit/meenana_states.dart';
 
 import '../../../../../../core/service/firebase_manager.dart';
@@ -16,11 +17,11 @@ class MeenAnaCubit extends Cubit<MeenAnaBlocStates> {
   int index = 0;
   MeenAnaDm? meenAnaDm;
   String? player;
-  String? firstcl;
-  String? secondcl;
-  String? thirdcl;
-  String? fourthcl;
-  String? fifthcl;
+  String? firstCl;
+  String? secondCl;
+  String? thirdCl;
+  String? fourthCl;
+  String? fifthCl;
   List<String?> Clues=[];
   List<String?> TableofClues=[];
   Future<void> getMeenAnaPlayer() async{
@@ -35,29 +36,29 @@ class MeenAnaCubit extends Cubit<MeenAnaBlocStates> {
         index = 0;
         meenAnaDm = querySnapshot.docs.first.data();
         player = meenAnaDm!.name;
-        firstcl = meenAnaDm!.first;
-        secondcl = meenAnaDm!.second;
-        thirdcl = meenAnaDm!.third;
-        fourthcl = meenAnaDm!.fourth;
-        fifthcl = meenAnaDm!.fifth;
-        List<String?> Addingclues = [
-          firstcl,
-          secondcl,
-          thirdcl,
-          fourthcl,
-          fifthcl
+        firstCl = meenAnaDm!.first;
+        secondCl = meenAnaDm!.second;
+        thirdCl = meenAnaDm!.third;
+        fourthCl = meenAnaDm!.fourth;
+        fifthCl = meenAnaDm!.fifth;
+        List<String?> addingClues = [
+          firstCl,
+          secondCl,
+          thirdCl,
+          fourthCl,
+          fifthCl
         ];
-        Clues.addAll(Addingclues);
-        Clues.add("خلصت خمن اسم اللاعب");
+        Clues.addAll(addingClues);
+        Clues.add(AppStrings.finishClues);
         isVisible = false;
         emit(SuccessGetMeenAnaPlayer());
       }
-    }on Exception catch(e)
+    }on Exception
     {
       emit(FailedGetMeenAnaPlayer());
     }
   }
-   void addingclue(){
+   void addingClue(){
     if(index==4)
       {
         TableofClues.add(Clues[index]);
@@ -71,7 +72,6 @@ class MeenAnaCubit extends Cubit<MeenAnaBlocStates> {
    }
   void changeVisibility(){
     isVisible = !isVisible;
-    print("changevisibility");
     emit(changeVisibiltyState());
   }
   void teamsIncreament(String team){
