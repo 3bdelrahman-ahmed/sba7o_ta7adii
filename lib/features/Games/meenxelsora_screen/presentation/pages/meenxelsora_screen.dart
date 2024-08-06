@@ -30,14 +30,14 @@ class _MeenXelsoraScreenState extends State<MeenXelsoraScreen> {
       ),
       widget: BlocConsumer<MeenXelsoraCubit, MeenXelsoraBlocStates>(
         builder: (context, state) {
-          if(state is LoadingState) {
+          if (state is LoadingState) {
             return const Center(
               child: CircularProgressIndicator(
                 strokeWidth: 5,
                 backgroundColor: Colors.white,
               ),
             );
-          } else{
+          } else {
             return Column(
               children: [
                 SquadPhoto(),
