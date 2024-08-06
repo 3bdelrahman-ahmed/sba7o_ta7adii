@@ -2,8 +2,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/pasword_and_tamseel_states.dart';
+import 'package:spa7o_ta7adii/core/utils/app_strings.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_team_widget/counter_teams_widgets.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/timer_isrunning_widget.dart';
 
@@ -21,29 +23,29 @@ class PasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: LayoutWidget(
-        buttonWidget:  ChangeWidget(onChanged:()=> context.read<PasswordAndTamseelCubit>().getPlayer()),
-        widget:   BlocConsumer<PasswordAndTamseelCubit,PasswordAndTamseelStates>(
+
+        buttonWidget:  ChangeWidget(onChanged:(){
+          context.read<PasswordAndTamseelCubit>().getPlayer().then((value) {
+            context.read<PasswordAndTamseelCubit>().stopTimer(reset: true);
+          },);
+        }),
+        widget:   BlocBuilder<PasswordAndTamseelCubit, PasswordAndTamseelStates>(
             builder: (context, state){
              return Center(
                   child: Column(
                     children: [
-                      // SizedBox(
-                      //   height: 50,
-                      // ),
                       if(state is LoadingState)
                    Container(
                        width: 320.w,
-                       height: 200.h,
+                       height: 160.h,
                        child: Center(child:
                        CircularProgressIndicator
-                         (strokeWidth: 5,backgroundColor: Colors.white,)))
+                         (strokeWidth: 5,)))
                       else if (state is FailedGetPlayer)
-                      Center(child: Text("Something went wrong"),)
+                      Center(child: Text(AppStrings.somethingWentWrong),)
                       else
                       PlayersWidget(),
-                      SizedBox(
-                        height: 40.h,
-                      ),
+                      40.height,
                      BuildTimerWidget(),
                       if(state is TimerRunningState)
                         TimerIsRunning(second:
@@ -57,30 +59,20 @@ class PasswordScreen extends StatelessWidget {
                         TimerCompleted(
                             second: context.read<PasswordAndTamseelCubit>().second,
                             maxSeconds: PasswordAndTamseelCubit.maxSeconds),
-                      SizedBox(
-                        height: 25.h,
-                      ),
-                       Padding(
-                          padding: EdgeInsets.symmetric(horizontal: 15),
-                          child: CounterTeamWidget(
-                            team1: context.read<PasswordAndTamseelCubit>().team1,
-                          team2: context.read<PasswordAndTamseelCubit>().team2,
-                            onDecTeamA: ()=>context.read<PasswordAndTamseelCubit>().teamsDecreament('A'),
-                            onIncTeamA: ()=>context.read<PasswordAndTamseelCubit>().teamsIncreament('A'),
-                            onDecTeamB: ()=>context.read<PasswordAndTamseelCubit>().teamsDecreament('B'),
-                            onIncTeamB: ()=>context.read<PasswordAndTamseelCubit>().teamsIncreament('B'),
-                          )
-                      )
+                  25.height,
+                       CounterTeamWidget(
+                         team1: context.read<PasswordAndTamseelCubit>().team1,
+                       team2: context.read<PasswordAndTamseelCubit>().team2,
+                         onDecTeamA: ()=>context.read<PasswordAndTamseelCubit>().teamsDecreament('A'),
+                         onIncTeamA: ()=>context.read<PasswordAndTamseelCubit>().teamsIncreament('A'),
+                         onDecTeamB: ()=>context.read<PasswordAndTamseelCubit>().teamsDecreament('B'),
+                         onIncTeamB: ()=>context.read<PasswordAndTamseelCubit>().teamsIncreament('B'),
+                       ).paddingSymmetric(horizontal: 15.w)
                     ],
                   ),
-                
               );
-              }
-            ,
-            listener: (context, state){
-
-            },
-          ),
+  },
+),
       )
     );
   }
