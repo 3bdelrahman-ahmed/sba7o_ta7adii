@@ -14,6 +14,7 @@ class AppStrings {
   static const String finishClues = "خلصت خمن اسم اللاعب";
   static const String hidePlayer = "اخفاء اسم اللاعب ";
   static const String showPlayer ="اسم اللاعب";
-
-
+  static const String stopTimer = "توقف";
+  static const String cancelTimer = "الغاء";
+  static const String continueTimer = "استكمال";
 }

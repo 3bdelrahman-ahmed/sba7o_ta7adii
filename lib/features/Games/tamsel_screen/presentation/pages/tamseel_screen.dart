@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,72 +19,70 @@ class TamseelScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: LayoutWidget(
-      buttonWidget: ChangeWidget(
-          onChanged: (){
-      context.read<PasswordAndTamseelCubit>().getPlayer();
-      context.read<PasswordAndTamseelCubit>().stopTimer(reset: true);
+      buttonWidget: ChangeWidget(onChanged: () {
+        context.read<PasswordAndTamseelCubit>().getPlayer();
+        context.read<PasswordAndTamseelCubit>().stopTimer(reset: true);
       }),
       widget: BlocConsumer<PasswordAndTamseelCubit, PasswordAndTamseelStates>(
         builder: (context, state) {
           return Center(
-            child:  Column(
-                children: [
-                  if (state is LoadingState)
-                    Container(
-                        width: 320.w,
-                        height: 200.h,
-                        child: const Center(
-                            child: CircularProgressIndicator(
-                          strokeWidth: 5,
-                          backgroundColor: Colors.white,
-                        )))
-                  else if (state is FailedGetPlayer)
-                    const Center(
-                      child: Text("Something went wrong"),
-                    )
-                  else
-                    PlayersWidget(),
-                  SizedBox(
-                    height: 40.h,
-                  ),
-                  BuildTimerWidget(),
-                  if (state is TimerRunningState)
-                    TimerIsRunning(
-                        second: context.read<PasswordAndTamseelCubit>().second,
-                        maxSeconds: PasswordAndTamseelCubit.maxSeconds)
-                  else if (state is TimerPausedState)
-                    TimerStopped(
+            child: Column(
+              children: [
+                if (state is LoadingState)
+                  Container(
+                      width: 320.w,
+                      height: 200.h,
+                      child: const Center(
+                          child: CircularProgressIndicator(
+                        strokeWidth: 5,
+                        backgroundColor: Colors.white,
+                      )))
+                else if (state is FailedGetPlayer)
+                  const Center(
+                    child: Text("Something went wrong"),
+                  )
+                else
+                  PlayersWidget(),
+                SizedBox(
+                  height: 40.h,
+                ),
+                BuildTimerWidget(),
+                if (state is TimerRunningState)
+                  TimerIsRunning(
                       second: context.read<PasswordAndTamseelCubit>().second,
-                      maxSeconds: PasswordAndTamseelCubit.maxSeconds,
-                    )
-                  else
-                    TimerCompleted(
-                        second: context.read<PasswordAndTamseelCubit>().second,
-                        maxSeconds: PasswordAndTamseelCubit.maxSeconds),
-                  SizedBox(
-                    height: 25.h,
-                  ),
-                  Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 15),
-                      child: CounterTeamWidget(
-                        team1: context.read<PasswordAndTamseelCubit>().team1,
-                        team2: context.read<PasswordAndTamseelCubit>().team2,
-                        onDecTeamA: () => context
-                            .read<PasswordAndTamseelCubit>()
-                            .teamsDecreament('A'),
-                        onIncTeamA: () => context
-                            .read<PasswordAndTamseelCubit>()
-                            .teamsIncreament('A'),
-                        onDecTeamB: () => context
-                            .read<PasswordAndTamseelCubit>()
-                            .teamsDecreament('B'),
-                        onIncTeamB: () => context
-                            .read<PasswordAndTamseelCubit>()
-                            .teamsIncreament('B'),
-                      ))
-                ],
-              ),
-            
+                      maxSeconds: PasswordAndTamseelCubit.maxSeconds)
+                else if (state is TimerPausedState)
+                  TimerStopped(
+                    second: context.read<PasswordAndTamseelCubit>().second,
+                    maxSeconds: PasswordAndTamseelCubit.maxSeconds,
+                  )
+                else
+                  TimerCompleted(
+                      second: context.read<PasswordAndTamseelCubit>().second,
+                      maxSeconds: PasswordAndTamseelCubit.maxSeconds),
+                SizedBox(
+                  height: 25.h,
+                ),
+                Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                    child: CounterTeamWidget(
+                      team1: context.read<PasswordAndTamseelCubit>().team1,
+                      team2: context.read<PasswordAndTamseelCubit>().team2,
+                      onDecTeamA: () => context
+                          .read<PasswordAndTamseelCubit>()
+                          .teamsDecreament('A'),
+                      onIncTeamA: () => context
+                          .read<PasswordAndTamseelCubit>()
+                          .teamsIncreament('A'),
+                      onDecTeamB: () => context
+                          .read<PasswordAndTamseelCubit>()
+                          .teamsDecreament('B'),
+                      onIncTeamB: () => context
+                          .read<PasswordAndTamseelCubit>()
+                          .teamsIncreament('B'),
+                    ))
+              ],
+            ),
           );
         },
         listener: (context, state) {},
