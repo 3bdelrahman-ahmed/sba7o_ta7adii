@@ -5,9 +5,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:spa7o_ta7adii/core/service/firebase_manager.dart';
 import 'package:spa7o_ta7adii/core/service/models/labsDm.dart';
 
-import 'labs_bloc_states.dart';
+import 'labs_states.dart';
 
-class LabsCubit extends Cubit<LabsBlocStates> {
+class LabsCubit extends Cubit<LabsStates> {
   LabsCubit() : super(InitialState()){
     getQuest();
   }

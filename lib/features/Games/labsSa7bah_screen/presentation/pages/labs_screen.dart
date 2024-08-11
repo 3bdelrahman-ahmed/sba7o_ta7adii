@@ -6,7 +6,7 @@ import 'package:spa7o_ta7adii/core/utils/app_strings.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/change_widget.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/counter_team_widget/counter_teams_widgets.dart';
 import 'package:spa7o_ta7adii/core/widgets/basic_widget/answer_button_widget.dart';
-import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_bloc_states.dart';
+import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_states.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/manager/cubit/labs_cubit.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/mazad_counter.dart';
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/quest_widget.dart';
@@ -25,7 +25,7 @@ class LabsSa7bkScreen extends StatelessWidget {
             ChangeWidget(onChanged: () => context.read<LabsCubit>().getQuest()),
         widget: Column(
           children: [
-            BlocBuilder<LabsCubit, LabsBlocStates>(
+            BlocBuilder<LabsCubit, LabsStates>(
               builder: (context, state) {
                 if (state is LoadingState)
                   return Container(
