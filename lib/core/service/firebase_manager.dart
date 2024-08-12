@@ -65,9 +65,9 @@ static Future<void> addBankQuest(BankDm bankDm){
 static CollectionReference<LabsDm> getLabsCollection(){
   return FirebaseFirestore.instance.collection("labsQuest").
   withConverter(fromFirestore: (snapshot, options) {
-    return LabsDm.fromjson(snapshot.data()!);
+    return LabsDm.fromJson(snapshot.data()!);
   }, toFirestore: (value, options) {
-    return value.tojson();
+    return value.toJson();
   },);
 }
 static Future<void> addLabsQuest(LabsDm labsDm){
