@@ -3,7 +3,10 @@ class AppStrings {
   static const String thisPageNotFound = "this page not found";
   static const String mazad = "المزاد";
   static const String team1 = "الفريق الأول";
+  static const String areYouSureToLeaveTheGame = "هل انت متأكد انك تريد مغادرة اللعبة ؟";
   static const String team2 = "الفريق التاني";
+  static const String yes = "نعم";
+  static const String no = "لا";
   static const String plusSign = "+";
   static const String minusSign = "-";
   static const String hideAnswers = "اخفاء الاجابات";
