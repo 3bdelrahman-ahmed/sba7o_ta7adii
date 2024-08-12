@@ -22,7 +22,7 @@ class QuestionWidget extends StatelessWidget {
             Color(0xff181d3c).withOpacity(0.5),
             ColorsManager.Primary.withOpacity(0.3)
           ]),
-          borderRadius: BorderRadius.circular(15),
+          borderRadius: BorderRadius.circular(15.w),
         ),
         child: SingleChildScrollView(
           child: Center(

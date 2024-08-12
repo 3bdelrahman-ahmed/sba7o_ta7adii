@@ -5,6 +5,7 @@
 // import 'package:buddy/core/widgets/dialogs/text_dialog_single_button_widget.dart';
 // import 'package:buddy/core/widgets/dialogs/text_dialog_widget.dart';
  import 'package:flutter/material.dart';
+import 'package:spa7o_ta7adii/core/utils/app_strings.dart';
 import 'package:spa7o_ta7adii/core/widgets/dialogs/text_dialog_widget.dart';
 
 import '../../helper/show_dialogBox.dart';
@@ -30,8 +31,8 @@ abstract class AppDialog {
             onConfirm: onConfirm,
             onCancel: onCancel,
             confirmColor: confirmColor??Colors.green,
-            confirmText: confirmText??"Yes",
-            cancelText: cancelText??"No",
+            confirmText: confirmText??AppStrings.yes,
+            cancelText: cancelText??AppStrings.no,
             cancelTextStyle:cancelTextStyle ,
             cancelBorderColor: cancelBorderColor??Colors.red,
           ));
