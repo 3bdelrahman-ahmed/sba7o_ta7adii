@@ -32,51 +32,13 @@ class TextDialogWidget extends StatefulWidget {
 }
 
 class _TextDialogWidgetState extends State<TextDialogWidget> with SingleTickerProviderStateMixin{
-  late CustomTimerController _controller ;
 
-  @override
-  void initState() {
-  _controller = CustomTimerController(
-  vsync: this,
-  begin: Duration(seconds: 31),
-  end: Duration(),
-  initialState: CustomTimerState.reset,
-  interval: CustomTimerInterval.seconds
-
-  );
-  setState(() {
-    _controller.start();
-  });
-    super.initState();
-  }
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-
-        Align(
-          alignment: Alignment.topRight,
-          child: CustomTimer(
-              controller: _controller,
-              builder: (state, time) {
-                // Build the widget you want!🎉
-                return Text(
-                    "${time.seconds}",
-                    style: TextStyle(
-
-                        fontFamily: "Cairo",
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20.sp)
-                );
-              }
-          ),
-        ),
         Text(
           widget.title,
           style: TextStyle(
