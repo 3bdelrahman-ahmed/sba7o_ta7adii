@@ -30,7 +30,7 @@ class TeamColumn extends StatelessWidget {
         3.height,
         Container(
           width: 60.w,
-          height: 60.h,
+          height: 60.w,
           decoration: BoxDecoration(
             color: Colors.black,
             borderRadius: BorderRadius.circular(10),
@@ -47,7 +47,7 @@ class TeamColumn extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               width: 40.w,
-              height: 40.h,
+              height: 40.w,
               child: Center(
                   child: Text(
                 AppStrings.minusSign,
@@ -61,7 +61,7 @@ class TeamColumn extends StatelessWidget {
                 borderRadius: BorderRadius.circular(20),
               ),
               width: 40.w,
-              height: 40.h,
+              height: 40.w,
               child: Center(
                   child: Text(
                 AppStrings.plusSign,
