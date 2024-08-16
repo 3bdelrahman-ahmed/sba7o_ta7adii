@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:spa7o_ta7adii/config/app_routes.dart';
+import 'package:spa7o_ta7adii/core/cubit/app_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/password_and_tamseel_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/validation_cubit.dart';
 import 'package:spa7o_ta7adii/core/service_locator/di.dart';
@@ -37,6 +38,7 @@ class Spa7oApp extends StatelessWidget {
               create: (context) => locator<ArostyCubit>(),
             ),
             BlocProvider(create: (context) => locator<ValidationCubit>()),
+            BlocProvider(create: (context) => locator<AppCubit>()),
             BlocProvider(
                 create: (context) => locator<PasswordAndTamseelCubit>()),
             BlocProvider(create: (context) => locator<RiskCubit>())
