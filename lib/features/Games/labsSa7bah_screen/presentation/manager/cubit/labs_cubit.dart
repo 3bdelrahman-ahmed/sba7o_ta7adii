@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:nb_utils/nb_utils.dart';
 import 'package:spa7o_ta7adii/core/service/firebase_manager.dart';
 import 'package:spa7o_ta7adii/core/service/models/labsDm.dart';
 
@@ -92,52 +93,51 @@ class LabsCubit extends Cubit<LabsStates> {
     second = maxSeconds;
     timer?.cancel();
     emit(TimerCompletedState());
-    print(state);
   }
 
   void startTimer({required int teamNum}){
-    timer?.cancel(); // Cancel any existing timer before starting a new one
-    timer = Timer.periodic(Duration(seconds: 1), (_){
-        emit(TimerRunningState());
+    timer?.cancel();
+    timer = Timer.periodic(800.milliseconds, (_){
         second--;
-       if(teamNum == 1)
+        print('Timer tick'); // Debug print
+
+        emit(TimerRunningState(
+          seconds: second
+        ));
+        print(state);
+        if(teamNum == 1)
          {
            if(team1Mazad == 0)
            {
-             resetTimer();
              timer?.cancel();
              team1++;
              team2Mazad = 0;
-             emit(TimerCompletedState());
+             resetTimer();
            }
            else if(second == 0 && team1Mazad > 0)
              {
-               resetTimer();
                timer?.cancel();
                team2++;
                team2Mazad = 0;
                team1Mazad = 0;
-               emit(TimerCompletedState());
              }
          }
        else
          {
            if(team2Mazad == 0)
            {
-             resetTimer();
              timer?.cancel();
              team2++;
              team1Mazad = 0;
-             emit(TimerCompletedState());
+             resetTimer();
            }
            else if (second == 0 && team2Mazad > 0)
            {
-             resetTimer();
              timer?.cancel();
              team1++;
              team1Mazad = 0;
              team2Mazad = 0;
-             emit(TimerCompletedState());
+             resetTimer();
            }
          }
     });

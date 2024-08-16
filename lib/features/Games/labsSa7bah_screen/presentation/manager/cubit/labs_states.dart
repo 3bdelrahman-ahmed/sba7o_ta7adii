@@ -1,6 +1,10 @@
+import 'package:equatable/equatable.dart';
 import 'package:spa7o_ta7adii/features/Games/meenxelsora_screen/presentation/pages/meenxelsora_screen.dart';
 
-abstract class LabsStates {}
+abstract class LabsStates extends Equatable {
+  @override
+  List<Object?> get props => [];
+}
 
 class InitialState extends LabsStates {}
 
@@ -14,7 +18,13 @@ class MazadChangeState extends LabsStates{}
 
 class CounterDecreamentState extends LabsStates {}
 
-class TimerRunningState extends LabsStates{}
+class TimerRunningState extends LabsStates{
+  final int seconds;
+  TimerRunningState({required this.seconds});
+
+  @override
+  List<Object?> get props => [seconds];
+}
 
 class TimerCompletedState extends LabsStates{}
 
