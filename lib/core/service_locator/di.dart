@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import 'package:spa7o_ta7adii/core/cubit/app_cubit.dart';
 import 'package:spa7o_ta7adii/core/service/cubit/validation_cubit.dart';
 
 import '../../features/Games/arosty_screen/presentation/manager/cubit/bloc_cubit.dart';
@@ -18,4 +19,5 @@ void DependencyInjectionSetup(){
   locator.registerFactory(() => RiskCubit());
   locator.registerFactory(() => MeenAnaCubit());
   locator.registerFactory(() => LabsCubit());
+  locator.registerFactory(() => AppCubit());
 }

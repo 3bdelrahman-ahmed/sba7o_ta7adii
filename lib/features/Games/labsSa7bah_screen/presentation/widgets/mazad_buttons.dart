@@ -21,10 +21,10 @@ class MazadButtons extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: ColorsManager.Primary,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(100),
           ),
           width: 45.w,
-          height: 45.h,
+          height: 45.w,
           child: Center(
               child: Text(
             AppStrings.minusSign,
@@ -37,10 +37,10 @@ class MazadButtons extends StatelessWidget {
         Container(
           decoration: BoxDecoration(
             color: ColorsManager.Primary,
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(100),
           ),
           width: 45.w,
-          height: 45.h,
+          height: 45.w,
           child: Center(
               child: Text(
             AppStrings.plusSign,

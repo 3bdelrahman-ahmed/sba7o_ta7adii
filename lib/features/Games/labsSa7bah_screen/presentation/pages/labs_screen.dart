@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,6 +18,7 @@ import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widg
 import 'package:spa7o_ta7adii/features/Games/labsSa7bah_screen/presentation/widgets/start_to_play.dart';
 
 import '../../../../../core/widgets/layout_widget.dart';
+import '../../../../../core/widgets/show_answers_widget.dart';
 import '../../../meenxelsora_screen/presentation/widget/show_names_widget.dart';
 
 class LabsSa7bkScreen extends StatefulWidget {
@@ -76,17 +78,12 @@ class _LabsSa7bkScreenState extends State<LabsSa7bkScreen> {
                   )).paddingSymmetric(horizontal: 16.w);
                 },
               ),
-              10.height,
-              ShowAnswersButton(
-                  isVisible: context.watch<LabsCubit>().isVisible,
-                  onChange: () => labsCubit.changeVisibility()),
-              ShowAnswers(
-                  isVisible: labsCubit.isVisible, Answers: labsCubit.answers),
-              10.height,
+               ShowAnswersWidget(answers: context.watch<LabsCubit>().answers ?? "").paddingSymmetric(horizontal: 16.w,vertical: 12.h),
+
               MazadCounter(),
-              5.height,
+              12.height,
               StartGame(),
-              25.height,
+              24.height,
               CounterTeamWidget(
                   team1: labsCubit.team1,
                   team2: labsCubit.team2,
